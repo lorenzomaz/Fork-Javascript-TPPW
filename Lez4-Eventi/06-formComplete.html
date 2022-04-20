@@ -40,9 +40,8 @@
         <input type="submit" value="Invia">
     </form>
 
-    <div id="demo">Sto provando a cambiare qualche file</div>
-    <div id="demo">Inserisco solo nel primo branch</div>
-    <div id="demo">Prova Fork</div>
+    <div id="demo"></div>
+   
 
     <script>
 
@@ -51,6 +50,7 @@
         var formatoCodFiscale = /^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]$/i
 
         function validate(event){
+            demo.innerHTML = ''
             //Faccio la validazione di tutti i campi
             if(document.mioForm.nome.value == ''){
                 demo.innerHTML += 'Hai dimenticato il nome <br>'
