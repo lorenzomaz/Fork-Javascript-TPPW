@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1 class="hot">Lista</h1>
+
+    <ul id="lista">
+        <li class="hot">Pc</li>
+        <li class="hot">Libro</li>
+        <li class="hot">Occhiali</li>
+        <li class="hot">K-way</li>
+        <li class="hot">Penne</li>
+    </ul>
+
+
+    <h1>Libri</h1>
+    <ul id="libri">
+        <li class="hot">Harry Potter</li>
+        <li class="hot">Delitto e Castigo</li>
+        <li class="hot">Robot all'alba</li>
+        <li class="hot">Guida Galattica per autostoppisti</li>
+        <li class="hot">Orgoglio e pregiudizio</li>
+    </ul>
+
+    <h1>Film</h1>
+    <ul>
+        <li>Paura e delirio a Las Vegas</li>
+        <li>Il buono il brutto e il cattivo</li>
+        <li>Il potere del cane</li>
+        <li>La grande bellezza</li>
+    </ul>
+
+
+    <script>
+        var listaLibri = document.querySelector('#libri');
+
+        //seleziono primo figlio 
+        // var primoItem = listaLibri.firstChild; //sconsigliato se volete l'elementoHTML
+        var primoItem2 = listaLibri.firstElementChild; //prendo l'intero html Object
+        var testoPrimoItem = primoItem2.innerHTML; //prendo il testo del primo elemento
+
+        // console.log(primoItem);
+        console.log(primoItem2);
+        console.log(testoPrimoItem);
+
+
+        //seleziono ultimo filglio 
+        var ultimoFiglio = listaLibri.lastElementChild;
+        console.log(ultimoFiglio.innerHTML);
+        ultimoFiglio.setAttribute('class', 'cool'); 
+
+        //seleziono tutti i figli
+        var lis = listaLibri.children; //NODELIST
+        console.log(lis);
+        //voglio aggiungere la classe sottolineato a tutti i libri
+        for(var i = 0; i < lis.length; i++){
+            lis[i].classList.add('sottolineato');
+        }
+
+        //PROPR NOde Value
+        //prendo il secondo libro e stampo il valore del nodo
+        var libro2 = listaLibri.children[1];
+        var nodoTxt = libro2.firstChild.nodeValue;
+        console.log(nodoTxt);
+
+
+
+
+    </script>
+
+    
+</body>
+</html>

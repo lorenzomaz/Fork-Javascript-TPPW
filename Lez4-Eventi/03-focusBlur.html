@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Compila il seguente form</h1>
+
+    <form action="http://www.example.org" method="GET" id="mioForm">
+
+        Nome: <input type="text" name="nome" id="nome"> <br>
+        Mail: <input type="text" name="mail" id="mail"> <br>
+        <input type="submit" value="Invia" id="btnInvia"> 
+    </form>
+
+    <div id="feedback"></div>
+
+    <script>
+        var mioForm = document.querySelector('#mioForm');
+        var nome = document.querySelector('#nome');
+        var mail = document.querySelector('#mail');
+        var feedback = document.querySelector('#feedback');
+
+        function controlla(event){
+            feedback.innerHTML = '';
+            
+            if(nome.value == ''){
+                feedback.innerHTML += 'Hai dimenticato il nome <br>';
+                event.preventDefault(); //evita che venga lanciato il form        
+            }
+
+            if(mail.value == ''){
+                feedback.innerHTML += 'Hai dimenticato la mail <br>';
+                event.preventDefault();
+            }
+        }
+
+        //la funzione controlla va fatta partire al submit
+        mioForm.addEventListener('submit', controlla, false);
+
+        //suggerisci nome e mail 
+        function suggerisciNome(){
+            feedback.innerHTML = 'Il nome non deve contenere numeri'
+        }
+        nome.addEventListener('focus', suggerisciNome, false);
+        nome.addEventListener('blur', controlla, false);
+
+        function suggerisciMail(){
+            feedback.innerHTML = 'La mail deve contenere @ e .qualcosa'
+        }
+        mail.addEventListener('focus', suggerisciMail, false);
+        mail.addEventListener('blur', controlla, false);
+
+
+        
+
+
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Eventi</h1>
+
+    <!-- Evento in linea -->
+    <button id="btn" onclick="saluta()">Pulsante 1</button>
+
+    <!-- Evento dom -->
+    <button id="btn2">Pulsante 2</button>
+
+    <!-- Evento EventListener -->
+    <button id="btn3">Pulsante 3</button>
+
+    <br>
+
+    <div id="demo"></div>
+
+    <script>
+        function saluta() {
+            console.log("Ciao Pippo");
+        }
+
+        // evento in JS, DOM
+        var btn2 = document.querySelector('#btn2');
+        btn2.onclick = saluta;
+
+        // EventListener
+        var btn3 = document.querySelector('#btn3');
+        btn3.addEventListener('click', saluta, false);
+
+        var demo = document.querySelector('#demo');
+        //Come gestire una funzione con parametri
+        function stampa(nome) {
+            demo.innerHTML = 'Ciao ' + nome;
+        }
+
+        //devo wrappare la funzione stampa(nome) con una funzione Anonima
+        btn3.addEventListener('mouseenter', function () {
+            stampa("Dario");
+        }, false);
+
+        //Posso anche inserire una funz anonima direttamente nell'Event Listener
+        // demo.addEventListener('mouseenter', function(){
+        //     demo.setAttribute('class', 'rosso');
+        // });
+
+        demo.addEventListener('mouseleave', function () {
+            demo.removeAttribute('class');
+        });
+
+        //utilizzando l'evento mousemove cambiare colore ogni pixel
+        demo.addEventListener('mousemove', function () {
+            // var red = 0;
+            var red = Math.floor(Math.random() * 256);
+            var green = Math.floor(Math.random() * 256);
+            var blue = Math.floor(Math.random() * 256);
+            demo.setAttribute('style', 'background-color: rgb(' + red + ',' + green + ', ' + blue + ')')
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Todo List</h1>
+    <input type="text" id="item" placeholder="cosa vuoi fare ?">
+    <input type="button" onclick="inserisci()" value='Inserisci'>
+
+    <div id="feedback"></div>
+
+    <ul id="lista">
+
+    </ul>
+
+    <script>
+        //raccogliere quello che scrive l'utente
+        //inserirlo in un array
+        //stampare l'array in una lista di li 
+
+        //HARD MODE
+        //controllare che il campo non sia vuoto nel momento dell'inserimento
+        //controllare che la cosa appena inserita non sia già presente
+
+        //    const lista = document.getElementById('lista');
+
+        //    var toDoList = [];
+
+        //    function inserisci(){
+        //        var item = document.getElementById('item').value;
+
+        //        var newItem = true;
+
+        //        if(item == ''){
+        //            alert('Scrivi almeno qualcosa');
+        //            newItem = false;
+        //        }else{
+        //            controllaSeEsiste(item);
+        //        }
+
+        //        if(newItem){
+        //            toDoList.push(item);
+        //            lista.innerHTML = '';
+
+        //            for(var i in toDoList){
+        //                lista.innerHTML += '<li>' + toDoList[i] +' </li>';
+        //            }
+        //        }
+
+        //        function controllaSeEsiste(item){
+        //             for(var i in toDoList){
+        //                 if(item == toDoList[i]){
+        //                     alert('elemento già inserito');
+        //                     newItem = false;
+        //                 }
+        //             }
+        //        }
+        //    }
+
+
+        const lista = document.getElementById('lista');
+        const feed = document.getElementById('feedback');
+
+        var toDoList = [
+
+        ]; //Array 
+
+        function inserisci() {
+            lista.innerHTML = '';
+            feed.innerHTML = '';
+
+            //prendo quello che è scritto nel campo item
+            var item = document.getElementById('item').value.trim(); //si utilizza per recuperare ciò che scriviamo in un campo input
+
+            // if(item == ''){
+            //     // alert('Non hai inserito nulla');
+            //     feed.innerHTML = 'Non hai inserito niente !!!!';
+            // }else{
+
+            //     // controllaSeEsiste(item);
+            //     // toDoList.push(item);
+            // }
+
+            if (item == '') {
+                feed.innerHTML = 'Non hai inserito niente';
+            } else {
+
+                if (toDoList.indexOf(item) == -1) { //se l'indice è -1 vuol dire che non esiste
+                    toDoList.push(item);
+                } else {
+                    feed.innerHTML = 'Elemento già esistente';
+                }
+            }
+
+            
+            //Stampo gli elementi del mio array
+            for (var i = 0; i < toDoList.length; i++) {
+                lista.innerHTML += '<li>' + toDoList[i] + '</li>';
+            }
+
+            //pulire il campo input
+            document.getElementById('item').value = '';
+
+            console.log(toDoList);
+        }
+
+        var parole = [
+            'Ciao',
+            'Dario',
+            'Bottiglia'
+        ];
+
+        var doveSiTrova = parole.indexOf('Pagina'); //tira fuori l'indice in cui si trova la parola
+
+        console.log(doveSiTrova);
+    </script>
+</body>
+
+</html>

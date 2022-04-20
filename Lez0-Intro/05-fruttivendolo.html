@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="titolo">Negozio di frutta</h1>
+
+    <div id="demo">
+        <p>Qui trovi un elenco di tutta la nostra frutta</p>
+    </div>
+
+    <ul id="lista"></ul>
+
+    <p id="totale"></p> <!--Scrivere il numero totale di frutti acquistabili-->
+
+    <script>
+       
+       var frutta = ['mela', 'pesca', 'banana', 'kiwi', 'pere'];
+
+       var prezzi = [1.50, 3, 0.85, 1.20, 1.30];
+
+       var elLista = document.getElementById('lista');
+
+    //    elLista.innerHTML = '<li>' + frutta[0] + '</li>' +
+    //                        '<li>' + frutta[1] + '</li>' +
+    //                        '<li>' + frutta[2] + '</li>' +
+    //                        '<li>' + frutta[3] + '</li>' +
+    //                        '<li>' + frutta[4] + '</li>' ;
+
+     
+    //1° MODO
+    // for(var indice in frutta){
+    //     elLista.innerHTML += '<li>' + frutta[indice] + '</li>';
+    // }
+    
+    // 2° MODO
+    var listaDaStampare = ''; //variabile di supporto
+
+    for(var indice in frutta){
+        //carico listaDaStampare
+        listaDaStampare += '<li>' + frutta[indice] + ' - ' + prezzi[indice]  + ' € </li>';
+    }
+
+    //stampo la lista
+    elLista.innerHTML = listaDaStampare;
+
+
+    //Nel div id totale inserisco il num totale di frutta
+    var totale = document.getElementById('totale');
+    totale.innerHTML = 'Oggi abbiamo ' + frutta.length + ' tipi di frutta'
+
+
+
+    // //esempio +=
+    // var numPenne = 10;
+    // numPenne += 15;
+    // numPenne += 12;
+    // numPenne += 25;
+
+    // console.log("Ho prodotto un totale di : " + numPenne) ;
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

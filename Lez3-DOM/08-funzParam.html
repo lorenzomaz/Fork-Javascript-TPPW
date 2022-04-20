@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="demo"></div>
+
+    <script>
+        const demo = document.querySelector('#demo');
+
+        var studenti = [{
+                nome: "Ersilda",
+                id: 1
+            },
+            {
+                nome: "Federico",
+                id: 2
+            },
+            {
+                nome: "Elliott",
+                id: 3
+            },
+            {
+                nome: "Nicolò",
+                id: 4
+            },
+            {
+                nome: "Marina",
+                id: 5
+            },
+            {
+                nome: "Sara",
+                id: 6
+            }
+        ];
+
+
+        function salutaQualcuno(nome, id) {
+            demo.innerHTML += 'Ciao ' + nome + ' id: ' + id +'<br>';
+        }
+
+        for (var i = 0; i < studenti.length; i++) {
+            salutaQualcuno(studenti[i].nome, studenti[i].id);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>    <!--Apertura-->
+    <head>
+        
+        <script></script> <!--Si può mettere anche prima della chiusura della head ma a Google non piace-->
+    </head>
+    <body>
+        <p>Ciao dal body della pagina HTML</p>
+
+
+        <!--Commento HTML-->
+        <!-- Collego uno script JS alla pagina -->
+
+        <!-- REGOLA 1 = tutti gli script vanno collegati al fondo della pagina PRIMA DELLA CHIUSURA DEL BODY 
+        L'ultimo script, in caso di librerie, sarà sempre il nostro-->
+
+        <!-- 1° Modo - collegamento in linea -->
+        <script type="text/javascript">
+            //commento doppio slash 
+            
+            /**
+             * Commento multiriga
+             */
+            
+            // Qui dentro andrà il mio codice JS
+            
+            var a = 1;
+            var b = 2;
+
+            console.log(a+b);
+        </script>
+
+        <!-- 2° MODO - Collegamento a file esterno -->
+        <script src="js/01-script.js"></script>
+
+
+    </body>
+</html>  <!--Chiusura-->
+

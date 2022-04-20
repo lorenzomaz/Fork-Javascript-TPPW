@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Compila il tuo form</h1>
+
+    <p>Il tuo username deve superare 6 caratteri</p>
+    <p>La password deve superare 8 caratteri</p>
+
+    <form action="http://www.example.org" method="GET" id="mioForm">
+        <label for="username">Username: </label>
+        <input type="text" id="username" name="username"> <br>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"> <br>
+
+        <input type="submit" value="Registrati">
+    </form>
+    
+    <div id="feedback"></div>
+
+    <script>
+
+        var username = document.querySelector('#username');
+        var password = document.querySelector('#password');
+        var mioForm = document.querySelector('#mioForm');
+        var feedback = document.querySelector('#feedback');
+
+        function checkUser(minLength){
+            if(username.value.length < minLength){
+                feedback.innerHTML += 'Il tuo username non è valido <br>';        
+                event.preventDefault();
+            }
+        }
+
+        function checkPass(minLength){
+            if(password.value.length < minLength){
+                feedback.innerHTML += 'La password non è valida <br>';
+                event.preventDefault();
+            }
+        }
+
+        // mioForm.addEventListener('submit', function(){
+        //     checkPass(8);
+        //     checkUser(6);
+        // }, false);
+
+        mioForm.addEventListener('submit', () => {
+            checkUser(6);
+            checkPass(8);
+        }, false);
+
+        //voglio controllare il tasto invio
+        username.addEventListener('keyup', EnterPressed, false);
+
+        function EnterPressed(event){
+            if(event.key === 'Enter'){
+                checkUser(6);
+            }
+        }
+
+        //Arrow Function
+        function saluta(){
+            console.log("ciao dalla funzione classica");
+        }
+
+        var salutami = () => console.log("Ciao dalla Arrow");
+        salutami();
+
+        var salutaDario = (nome, cognome) => {
+            console.log('Ciao ' + nome + ' ' + cognome);
+        }
+        salutaDario('Dario', 'Mennillo')
+        
+    </script>
+
+
+</body>
+</html>

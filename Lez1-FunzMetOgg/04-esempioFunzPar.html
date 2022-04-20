@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Nome: <input type="text" id="nome"><br>
+    Cognome: <input type="text" id="cognome"><br>
+    <button onclick="inviaDati()">Invia</button>
+
+    <div id="demo"></div>
+
+    <script>
+        const demo = document.getElementById('demo');
+
+        function creaUser(nome, cognome) {
+            var utente = nome + ' ' + cognome;
+            demo.innerHTML = utente;
+        }
+
+        function inviaDati() {
+            //La funzione raccoglie ciò che scrive l'utente per poi passarlo alla funzione creaUser
+            var nome = document.getElementById('nome').value;
+            var cognome = document.getElementById('cognome').value;
+            creaUser(nome, cognome);
+        }
+    </script>
+</body>
+
+</html>

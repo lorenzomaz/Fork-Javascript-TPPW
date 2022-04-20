@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1 class="hot">Lista</h1>
+
+    <ul id="lista">
+        <li class="hot">Pc</li>
+        <li class="hot">Libro</li>
+        <li class="hot">Occhiali</li>
+        <li class="hot">K-way</li>
+        <li class="hot">Penne</li>
+    </ul>
+
+
+    <h1>Libri</h1>
+    <ul id="libri">
+        <li class="hot">Harry Potter</li>
+        <li class="hot">Delitto e Castigo</li>
+        <li class="hot">Robot all'alba</li>
+        <li class="hot">Guida Galattica per autostoppisti</li>
+        <li class="hot">Orgoglio e pregiudizio</li>
+    </ul>
+
+    <h1>Film</h1>
+    <ul>
+        <li>Paura e delirio a Las Vegas</li>
+        <li>Il buono il brutto e il cattivo</li>
+        <li>Il potere del cane</li>
+        <li>La grande bellezza</li>
+    </ul>
+
+    <script>
+        //QUERY SELECTOR - sintassi CSS
+        //Recupera solo 1 elemento e nel caso in cui passo una sintassi comune a più elementi
+        //recupera solo la prima occorrenza.
+        // #ID
+        // .class
+
+        var lista = document.querySelector('#lista');
+        console.log(lista);
+
+        var lis = document.querySelector('.hot'); //PC 
+        console.log(lis);
+
+        //QuerySelector ALL
+        //Recupera tutti gli elementi di class hot, incluso h1
+        var tuttiHOT = document.querySelectorAll('.hot'); 
+        console.log(tuttiHOT);
+
+        //Recupera solo gli li di class hot
+        var liHOT = document.querySelectorAll('li.hot'); //NODELIST
+        console.log(liHOT);
+
+        //Stampo il contenuto degli li
+        for(var i = 0; i < liHOT.length; i++){
+            console.log(liHOT[i].innerHTML);
+        }
+
+
+        //Recupero solo gli li dei libri
+        var liLibri = document.querySelectorAll('#libri li.hot');
+        for(var i = 0; i < liLibri.length; i++){
+            liLibri[i].setAttribute('class', 'cool');
+        }
+
+        var tutteLeListe = document.querySelectorAll('ul');
+        console.log(tutteLeListe);
+        
+        var films = document.querySelectorAll('ul')[2];
+        films.setAttribute('class', 'hot')
+
+
+
+    </script>
+</body>
+</html>

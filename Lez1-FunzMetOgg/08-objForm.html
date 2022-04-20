@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <form action='' id="mioForm">
+        <input type="text" id="nome" placeholder="Inserisci Nome"> <br>
+        <input type="text" id="cognome" placeholder="Inserisci cognome"> <br>
+        <input type="text" id="eta" placeholder="Inserisci età"> <br>
+
+        <input type="button" onclick="registra()" value="Registra">
+        <input type="button" value="Mostra Utenti" onclick="mostraUsers()">
+    </form>
+
+    <div id="demo"></div>
+    <ul id="lista"></ul>
+
+    <script>
+        //I campi input diventano le proprietà dell'oggetto utente
+        //Nel div demo stampo il resoconto del mio utente 
+        
+        //1.crea un costruttore dell'oggetto utente o direttamente l'oggetto utente
+
+        // var user = {
+        //     nome: '',
+        //     cognome: '',
+        //     eta: '',
+
+        //     presentaUser(nome, cognome, eta){
+        //         this.nome = nome;
+        //         this.cognome = cognome;
+        //         this.eta = eta;
+
+        //         return "Benvenuto " + this.nome + ' ' + this.cognome + '. La tua età è: ' + this.eta;
+        //     }
+        // }
+
+        // var demo = document.getElementById('demo');
+
+        // function registra(){
+        //     var nome = document.getElementById('nome').value;
+        //     var cognome = document.getElementById('cognome').value;
+        //     var eta = document.getElementById('eta').value;
+
+        //     var result = user.presentaUser(nome, cognome, eta);
+        //     demo.innerHTML = result;
+        // }
+        
+        function Utente(nome, cognome, eta){
+            this.nome = nome;
+            this.cognome = cognome;
+            this.eta = eta;
+
+            this.datiUtente = function(){
+                return 'Nome Utente: ' +this.nome + '<br> Cognome Utente: ' + this.cognome + '<br> Età Utente: ' +this.eta;
+            }
+        }
+        
+        const demo = document.getElementById('demo');
+        const mioForm = document.getElementById('mioForm');
+       
+        var utenti = [];
+
+        function registra(){
+            var nome = document.getElementById('nome').value;
+            var cognome = document.getElementById('cognome').value;
+            var eta = document.getElementById('eta').value;
+
+            var utente = new Utente(nome, cognome, eta);
+            demo.innerHTML = utente.datiUtente();
+
+            //inserisco gli utenti nell'array
+            utenti.push(utente);
+            console.log(utenti);
+
+            //resetto i campi del form
+            mioForm.reset();
+        }
+
+        const lista = document.getElementById('lista');
+        
+        function mostraUsers(){
+            lista.innerHTML = ''; //reset della lista ogni volta
+            for(var i in utenti){
+                lista.innerHTML += '<li>' + utenti[i].nome + ' ' + utenti[i].cognome + '</li>';
+            }
+        }
+
+
+        //ESEMPIO JSON
+        var user = '{"nome" : "Dario", "cognome": "Mennillo", "eta": 32}'; //Questa è una string
+        console.log(user.nome); //undefined
+    
+        //trasformo questa stringa in un oggetto
+        var userObj = JSON.parse(user); 
+        console.log(userObj.nome);
+        console.log(userObj.cognome);
+        console.log(userObj.eta);
+
+
+        //trasformo un oggetto in stringa
+        var user2 = {
+            nome: "Anna",
+            cognome: 'Rossi',
+            eta: 33,
+            presente: false
+        }
+
+
+        console.log(typeof user2);
+
+        var user2JSON = JSON.stringify(user2);
+        console.log(typeof user2JSON);
+
+   </script>
+
+</body>
+</html>

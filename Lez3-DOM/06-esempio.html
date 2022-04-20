@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Film</h1>
+    <ul id="film">
+        <li>Paura e delirio a Las Vegas</li>
+        <li>Il buono, il brutto, il cattivo</li>
+        <li>Il potere del cane</li>
+        <li>La grande bellezza</li>
+    </ul>
+
+
+    <script>
+        // Senza toccare l'html, trasforma i titoli dei film in un link alla pagina wiki
+        //Versione BULK
+        //Prendo i titoli e li inserisco in un array
+        var li = document.querySelectorAll('li'); //nodelist
+        console.log(li);
+        var titoli = [];
+
+        //Riempio l'array titoli
+        for(let i= 0; i < li.length; i++){
+            titoli.push(li[i].textContent)
+        }
+
+        console.log(titoli);
+
+        //creo il tag a  --> <a href="https://it.wikipedia.org/wiki/La grande bellezza"> La grande bellezza </a> 
+        // var a1 = document.createElement('a');
+        // a1.setAttribute('href', 'https://it.wikipedia.org/wiki/'+titoli[0]);
+        // a1.textContent = titoli[0];
+        // console.log(a1);
+
+        // //piazzo a1 al posto del primo li
+        // li[0].innerHTML = '' 
+        // li[0].appendChild(a1);
+        
+        for(var i = 0; i < titoli.length; i++){
+            var a = document.createElement('a');
+            a.setAttribute('href', 'https://it.wikipedia.org/wiki/'+titoli[i]);
+            a.textContent = titoli[i];
+
+            li[i].innerHTML= '';
+            li[i].appendChild(a)
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

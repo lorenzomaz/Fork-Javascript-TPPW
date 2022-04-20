@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <h1 id="titolo"></h1>
+
+    <div id="demo"></div>
+
+    <ul id="lista"></ul>
+
+    <script>
+
+    //Recupero l'elemento html che voglio utilizzare
+    var titolo = document.getElementById('titolo');
+    
+    console.log(titolo);
+    console.log(typeof titolo);
+
+    var titoloText = "Benvenuto sulla palette di colori";
+
+    //Inietto nell'elemento il mio testo con la proprietà innerHTML
+    titolo.innerHTML = titoloText
+
+    //recupero il div id demo 
+    var demo = document.getElementById('demo');
+    var demoText = "<p>In basso troverai la nostra lista di colori disponibili</p>";
+    demo.innerHTML = demoText;
+
+    
+    //Metodi -> Parentesi tonde 
+    //Proprietà -> Non hanno parentesi tonde
+
+    //ARRAY
+    //Dichiaro Array
+    var colori = ['blu', 'verde', 'giallo', 'azzurro'];
+
+    console.log(colori); //stampo tutto l'array
+
+    //stampo i singoli colori con nomeArray[indice]
+
+    console.log(colori[0]);
+    console.log(colori[1]);
+    console.log(colori[2]);
+    console.log(colori[3]);
+
+    console.log("Il mio array ha: " + colori.length + ' elementi');
+
+    //aggiungo un colore
+    colori.push('viola');
+
+    //L'ordinamento non modifica la posizione degli indici, cioè 0 -> primo elemento
+    //ordino array alfabeticamente
+    colori.sort();
+
+    //inverto ordine array
+    colori.reverse();
+
+    console.log(colori[0]);
+
+    console.log(colori);
+
+    //Ricerco un determinato indice in base al valore
+    var posizione = colori.indexOf('rosso'); //restituisce -1 perché non c'è quel colore
+    console.log("Il colore rosso si trova in posizione: " + posizione);
+    
+    var posizione2 = colori.indexOf('giallo');
+    console.log("Il colore giallo si trova in posizione: " + posizione2);
+
+    //rimuovo l'ultimo elemento
+    var elementoRimosso = colori.pop()
+    console.log('Ho rimosso il colore: ' + elementoRimosso);
+
+    console.log(colori);
+
+
+    //ESEMPIO ARRAY VUOTO 
+    var numeri = [];
+
+    //Posso inserire nuovi elementi con il push
+    numeri.push(4); // --> 0
+    numeri.push(8); // --> 1
+    numeri.push(12);// --> 2
+    
+    //opppure posso inserire nuovi elementi con 
+    //le parentesi quadre, assegnando un valore 
+    //ad un dato indice
+
+    numeri[3] = 15; // --> 3
+    numeri[4] = 20; // --> 4
+    numeri[5] = 22; // --> 5
+    
+    //Posso anche modificare il valore con lo stesso sistema
+    numeri[3] = 18;
+
+    console.log(numeri);
+
+
+    //Altro modo di inizializzare un Array 
+    var frutti = new Array('mela', 'pesca', 'banana', 'ciliegia');
+    //questo array rispetta gli stessi metodi e proprietà di quelli precedenti
+
+
+
+
+    
+
+
+
+
+    </script>
+</body>
+</html>

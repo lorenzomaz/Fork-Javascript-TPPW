@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    
+    Nome Utente: <input type="text" id="nomeUtente"> <br>
+    Cognome Utente: <input type="text" id="cognome"> <br>
+    Mail Utente: <input type="text" id="mail"> <br>
+    Età Utente: <input type="text" id="eta"> <br>
+    <button  onclick="miaFunzione()">Cliccami</button>
+    <button onclick="cambiaColore()">Cambia Colore</button>
+    
+    <div id="demo"></div>
+
+
+    <script>
+    const demo = document.getElementById('demo');
+    
+    function miaFunzione(){
+        //Il value va raccolto dentro le funzioni poiché devo dare tempo all'utente
+        //di scrivere nel campo input
+        var nomeUtente = document.getElementById('nomeUtente').value.trim();
+        var cognomeUtente = document.getElementById('cognome').value.trim();
+        var mailUtente = document.getElementById('mail').value.trim();
+        var etaUtente = document.getElementById('eta').value.trim();
+
+        demo.innerHTML = "Mi chiamo " + nomeUtente + " " + cognomeUtente + ", " + "ho " 
+                        + etaUtente + ' anni. La mia mail è ' +  mailUtente;
+    }
+
+    function cambiaColore(){
+        demo.setAttribute('class', 'rosso');
+    }
+
+
+
+    </script>
+
+</body>
+</html>

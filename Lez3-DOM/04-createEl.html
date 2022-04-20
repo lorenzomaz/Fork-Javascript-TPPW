@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="hot">Lista</h1>
+
+    <ul id="lista">
+        <li class="hot">Pc</li>
+        <li class="hot">Libro</li>
+        <li class="hot">Occhiali</li>
+        <li class="hot">K-way</li>
+        <li class="hot">Penne</li>
+
+    </ul>
+
+    <h1>Film</h1>
+    <ul id="film">
+        <li>Paura e delirio a Las Vegas</li>
+        <li>Il buono il brutto e il cattivo</li>
+        <li>Il potere del cane</li>
+        <li>La grande bellezza</li>
+    </ul>
+
+    <div id="locandina">
+
+    </div>
+
+    <script>
+
+        //Crea un nuovo elemento
+        //aggiungo un nuovo li alla lista 
+        var nuovoLI = document.createElement('li');
+        var nuovoTxt = document.createTextNode('Evidenziatori');
+
+        nuovoLI.appendChild(nuovoTxt);
+
+        console.log(nuovoLI);
+
+        //Seleziono la lista genitore e aggancio il nuovo Figlio 
+        var lista = document.querySelector('#lista');
+        lista.appendChild(nuovoLI);
+
+        //Creo un nuovo film 
+        var nuovoFilm = document.createElement('li');
+        // var nuovoTitolo = document.createTextNode('Il signore degli anelli');
+        nuovoFilm.innerHTML = 'Il signore degli anelli '
+        // nuovoFilm.appendChild(nuovoTitolo); // <li>Il signore degli anelli </li>
+
+        var listaFilm = document.querySelector('#film');
+        listaFilm.appendChild(nuovoFilm); //<ul> ..... <li>Il signore degli anelli</li> </ul>
+
+        //Proviamo con una immagine
+        var img = document.createElement('img');
+        // img.src = 'https://i.scdn.co/image/ab67616d0000b27360e13745df534507afaad46d';
+        img.setAttribute('src', 'https://i.scdn.co/image/ab67616d0000b27360e13745df534507afaad46d');
+
+        var locandina = document.querySelector('#locandina');
+        locandina.appendChild(img);
+
+        //Elimino un elemento
+        var elDaRimuovere = document.querySelectorAll('#lista li')[3];
+        var genitoreContenitore = document.querySelector('#lista');
+        genitoreContenitore.removeChild(elDaRimuovere);
+
+        var newEl = document.createElement('div');
+        newEl.innerHTML = '<p> Questo è un nuovo Div </p>';
+
+        var lista = document.querySelector('#lista');
+        // lista.after(newEl)
+        lista.before(newEl);
+
+        //Aggiungo qualcosa in mezzo alla lista
+        var lis = document.querySelectorAll('#lista li');
+        var nuovoEl = document.createElement('li');
+        nuovoEl.innerHTML  = 'Nuovissimo Elemento';
+        lis.item(2).before(nuovoEl);
+
+
+    </script>
+</body>
+</html>

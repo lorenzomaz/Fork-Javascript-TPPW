@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <h1>Notte degli Oscar</h1>
+    <h3>Tutti gli attori premiati</h3>
+
+    <ul>
+        <li>
+           
+           <img id="img1">
+        </li>
+
+        <li>
+            <img id="img2">
+        </li>
+        <li>
+            <img id="img3">
+        </li>
+        <li>
+            <img id="img4">
+        </li>
+        
+    </ul>
+
+    <script>
+        // Inserire link Wiki e inserire l'immagine
+        var attori = [
+            {
+                nome: "Will Smith",
+                linkImg: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/TechCrunch_Disrupt_2019_%2848834434641%29_%28cropped%29.jpg/800px-TechCrunch_Disrupt_2019_%2848834434641%29_%28cropped%29.jpg'
+            },
+            {
+                nome: "Jessica Chastain",
+                linkImg: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/SDCC_2015_-_Jessica_Chastain_%2819111308673%29_%28cropped%29.jpg/800px-SDCC_2015_-_Jessica_Chastain_%2819111308673%29_%28cropped%29.jpg'
+            },
+            {
+                nome: "Troy Kotsur",
+                linkImg:'https://upload.wikimedia.org/wikipedia/commons/d/d7/Troy_kotsur_2022_1.jpg'
+            },
+            {
+                nome: 'Ariana deBose',
+                linkImg: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Ariana_Debose_during_an_interview%2C_March_2022.jpg/800px-Ariana_Debose_during_an_interview%2C_March_2022.jpg'
+            }
+        ];
+
+        //prova a sviluppare lo script con 2 funzioni distinte e separate
+        //1. scrivi i nomi degli attori all'interno di un tag a 
+        //2. imposta l'attributo src al tag img esistente
+        var lis = document.querySelectorAll('li');
+        var imgs = document.querySelectorAll('img');
+
+        function caricaNomi(nomeAttore, li){
+            var a = document.createElement('a');
+            a.setAttribute('href', 'https://it.wikipedia.org/wiki/'+nomeAttore);
+            a.textContent = nomeAttore;
+            li.append(a);
+        }
+
+        function caricaImg(link, img){
+            img.setAttribute('src', link)
+        }
+
+        for(var i = 0; i < attori.length; i++){
+            caricaNomi(attori[i].nome, lis[i]);
+            caricaImg(attori[i].linkImg, imgs[i]);
+        }
+
+
+    </script>
+</body>
+</html>

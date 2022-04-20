@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <label>Anno di Nascita</label>
+    <input type="number" id="annoNascita"> <br>
+
+    <label>Anno Corrente</label>
+    <input type="number" id="annoCorrente"> <br>
+
+    <button onclick="calcola()">Calcola</button>
+    <!-- <button onclick="recuperaDati()">Calcola</button> -->
+
+    <div id="demo"></div>
+
+    <script>
+        const demo = document.getElementById('demo');
+
+        //BASE
+        function calcola(){
+            //1. prende i valori dei campi input
+            var annoNascita = document.getElementById('annoNascita').value;
+            var annoCorrente = document.getElementById('annoCorrente').value;
+
+            var eta = Number(annoCorrente) - Number(annoNascita);
+            // var eta = Number(annoCorrente - annoNascita)
+
+            demo.innerHTML = "Quest'anno hai " + eta + ' anni'; 
+        }
+
+
+        //Intermediate
+        // function calcola(annoN, annoC){
+        //     var eta = annoC - annoN;
+        //     demo.innerHTML = "Quest'anno hai " + eta + ' anni'
+        // }
+
+        // function recuperaDati(){
+        //     var annoNascita = document.getElementById('annoNascita').value;
+        //     var annoCorrente = document.getElementById('annoCorrente').value;
+        //     calcola(annoNascita, annoCorrente);
+        // }
+
+        //ADVANCED
+        // function calcola() {
+        //     var annoNascita = document.getElementById('annoNascita').value;
+        //     var annoCorrente = document.getElementById('annoCorrente').value;
+
+        //     var eta = Number(annoCorrente) - Number(annoNascita);
+        //     // var eta = Number(annoCorrente - annoNascita)
+
+        //     if (annoCorrente < annoNascita) {
+        //         demo.innerHTML = "Hai invertito gli anni";
+        //         demo.setAttribute('class', 'rosso');
+
+        //     } else if(annoNascita <= 0){
+        //         demo.innerHTML = "Hai messo un anno di nascita negativo..."
+        //     }
+        //     else {
+        //         demo.removeAttribute('class')
+        //         demo.innerHTML = "Quest'anno hai " + eta + ' anni';
+        //     }
+        // }
+    </script>
+
+
+</body>
+
+</html>

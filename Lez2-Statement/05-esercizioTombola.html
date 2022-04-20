@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1>Tombola</h1>
+    <p>Puoi estrarre massimo 90 numeri </p>
+    
+    <input type="number" id="numDaEstrarre"> 
+    <button type="button" id="btn"> Estrai </button>
+
+    <div id="demo">
+        
+    </div>
+
+    <script>
+    
+    const btn = document.getElementById('btn');
+    const demo = document.getElementById('demo');
+    
+    contatore = 1;
+    function estrai(){
+        // demo.innerHTML = '';
+        demo.innerHTML += '<h4 class="titolo">Estrazione numero ' + contatore + '</h4>';
+        var numeri = [];
+        const numDaEstrarre =Number( document.getElementById('numDaEstrarre').value );
+
+        //fare controllo se il numero supera 90
+
+        for(var i = 0; i < numDaEstrarre; i++){
+            var numero = Math.ceil(Math.random() * 90);
+            if(numeri.indexOf(numero) == -1){
+                numeri.push(numero)
+            }else{
+                i--; //mi permette di ripetere il giro 
+            }
+        }
+    
+       demo.innerHTML += '<div class="striscia">'+ stampa(numeri)+'</div>';
+       demo.innerHTML += '<br>';
+       contatore++;
+    }
+    
+    
+    function stampa(numeri){
+        var striscia = ''
+        for(var n = 0; n < numeri.length; n++){
+            striscia += '<div class="numero">' + numeri[n] + '</div>';
+        }
+        return striscia;
+    }
+    
+    btn.onclick = estrai;
+
+
+    </script>
+</body>
+</html>

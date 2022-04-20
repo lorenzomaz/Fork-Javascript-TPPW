@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="parola" placeholder="parola da invertire">
+    <button onclick="inverti()">Inverti</button>
+    <div id="demo"></div>
+
+    <script>
+        const demo = document.getElementById('demo');
+
+        function inverti(){
+            var parola = String(document.getElementById('parola').value);
+
+            // var parolaInArray = parola.split('');
+            // console.log(parolaInArray);
+
+            // var parolaRev = parolaInArray.reverse();
+            // console.log(parolaRev);
+
+            // var parolaOK = parolaRev.join('');
+            // console.log(parolaOK);
+
+            var parolaReverse = parola.split('').reverse().join('');
+            console.log(parolaReverse);
+
+        }
+
+
+    </script>
+</body>
+</html>

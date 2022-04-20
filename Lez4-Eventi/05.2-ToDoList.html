@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>To Do List</h1>
+    <p>La todolist deve contenere due campi: item, data</p>
+    <p>Ogni elemento della TodoList deve essere un nuovo elemento html (createElement). <br>
+        Controlla il campo di input prima di aggiungere (vuoto o pieno) <br>
+        Per ogni elemento della lista crea due pulsanti: elimina, modifica
+    </p>
+
+    <input type="text" id="item">
+    <input type="date" id="data">
+    <input type="button" value="Invia" id="btn">
+
+    <div id="feed"></div>
+
+    <ul id="lista">
+    </ul>
+
+    <p>Crea una versione stampabile della todolist formato JSON</p>
+    <button id="btnJSON">Crea JSON</button>
+
+    <button id="btnStmp">Stampa JSON</button>
+
+    <script>
+        var btn = document.querySelector('#btn');
+        var feed = document.querySelector('#feed');
+        var lista = document.querySelector('#lista');
+        var btnJSON = document.querySelector('#btnJSON');
+        
+        function inserisci() {
+            var item = document.querySelector('#item').value;
+            var data = document.querySelector('#data').value;
+            
+            //controllo dei campi
+            if (item.trim() == '' || data == '') {
+                feed.innerHTML += "Stai compilando male i campi";
+            } else {
+                feed.innerHTML = '';
+                //aggiunta dell'item alla lista
+                var dataNew = new Date(data);
+                var giorno = dataNew.getDate();
+                var mese = dataNew.getMonth() + 1; //i mesi partono da 0
+                var anno = dataNew.getFullYear();
+
+                var li = document.createElement('li');
+                li.innerHTML = item + ' - ' + giorno + '/' + mese + '/' + anno;
+
+                //Pulsante Elimina
+                var btnEl = document.createElement('button');
+                btnEl.innerHTML = 'Elimina';
+                li.appendChild(btnEl);
+                btnEl.addEventListener('click', elimina, false);
+
+                //portare fuori
+                function elimina() {
+                    lista.removeChild(li);
+                }
+
+                //Pulsante Modifica e funzione 
+                function modifica() {
+                    elimina();
+                    document.querySelector('#item').value = item;
+                    document.querySelector('#data').value = data;
+                }
+
+                var btnMod = document.createElement('button');
+                btnMod.innerHTML = 'Modifica';
+                li.appendChild(btnMod);
+                btnMod.addEventListener('click', modifica, false)
+
+                //funzione Barrato ( FAtto )
+                li.addEventListener('click', barrato, false);
+                function barrato(){
+                    li.classList.toggle('barrato')
+                }
+
+                //pulisco i campi input
+                document.querySelector('#item').value = '';
+                document.querySelector('#data').value = '';
+
+                lista.appendChild(li);
+            }
+        }
+
+
+        //Creo un costruttore dell'oggetto todoItem
+        var id = 0;
+        function todoObj(testo, data){
+            this.id = id++
+            this.testo = testo;
+            this.data = data;
+        }
+
+        var listaITEM = [];
+
+        function costruisciJSON(){
+            //prendo i testi, prendo le date, costruisco l'oggetto, lo piazzo in un array
+            var items = document.querySelectorAll('li'); //Nodelist
+
+            //per trasformare una nodelist e quindi applicare un foreach
+            //devo utilizzare la notazione [...nomeNodelist]
+            [...items].forEach(contenuto => {
+                // console.log(contenuto.firstChild.textContent.split(' - '));
+                var li = contenuto.firstChild.textContent.split(' - ')
+                var txt = li[0];
+                var data = li[1];
+                var objLi = new todoObj(txt, data);
+                listaITEM.push(objLi);
+            })
+
+            stampaJSON();
+        }
+
+
+        function stampaJSON(){
+            // console.log(listaITEM);
+            var mioJSON = JSON.stringify(listaITEM);
+            console.log(mioJSON);
+        }
+        
+        btnJSON.addEventListener('click', costruisciJSON, false);
+        btn.addEventListener('click', inserisci, false);
+    </script>
+</body>
+
+</html>

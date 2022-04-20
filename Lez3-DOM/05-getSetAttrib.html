@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1>Film</h1>
+    <ul id="film">
+        <li>Paura e delirio a Las Vegas</li>
+        <li class="sottolineato">Il buono il brutto e il cattivo</li>
+        <li>Il potere del cane</li>
+        <li class="cool">La grande bellezza</li>
+    </ul>
+
+    <script>
+
+        //prendere un li e trasformalo in un link a wikipedia del relativo film
+
+        //SET ATTRIBUTE
+        //class id href alt src type role style 
+        var mioLI = document.querySelectorAll('li')[2];
+        mioLI.setAttribute('style', 'color: red');
+
+        var mioLI2 = document.querySelectorAll('li')[0];
+        mioLI2.setAttribute('class', 'cool');
+
+        //GET ATTRIBUTE - leggo il valore degli attributi
+        var mioLi3 = document.querySelectorAll('li')[1];
+
+        var valoreClasse = mioLi3.getAttribute('class');
+        console.log(valoreClasse);
+
+        //HAS ATTRIBUTE serve a controllare se esiste o meno un attributo
+        var mioLi4 = document.querySelectorAll('li')[3];
+        if(mioLi4.hasAttribute("class")){
+            var attr = mioLi4.getAttribute('class');
+            console.log("Il valore della classe è : " + attr);
+        }else{
+            console.log("L'elemento in questione non ha una classe");
+        }
+
+
+
+
+    </script>    
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <input type="number" id="n1" placeholder="numero 1"> <br>
+    <input type="number" id="n2" placeholder="numero 2"> <br>
+    <button onclick="controlla()">Controlla</button>
+
+
+    <script>
+        //dichiaro la funzione
+        function prova(nomeApp) {
+            // console.log("Sto provando la seguente applicazione: " + nomeApp);
+            return "Sto provando la seguente app: " + nomeApp;
+        }
+
+
+        //Richiamo
+        // console.log( prova("Mastermind") ) ;
+
+        var uscita = prova("Mastermind");
+        console.log(uscita);
+
+        // function testaNumeri(a, b){
+
+        //     if(a > b){
+        //         console.log("Il maggiore tra i due è : " + a);
+        //     }else if(b > a){
+        //         console.log("Il maggiore tra i due è : " + b);
+        //     }else{
+        //         console.log("I due numeri sono uguali");
+        //     }
+
+        // }
+
+        // testaNumeri(8,18);
+
+        function testaNumeri(a, b) {
+            this.num1 = a;
+            this.num2 = b;
+
+            var numeroMaggiore = algoritmoMaggMin(this.num1, this.num2);
+
+            return "Il maggiore tra i due è " + numeroMaggiore;
+        }
+
+        function algoritmoMaggMin(a, b) {
+            if (a > b) {
+                return a
+            } else {
+                return b
+            }
+        }
+
+        function controlla() {
+            var n1 = Number(document.getElementById('n1').value);
+            var n2 = Number(document.getElementById('n2').value);
+            var uscita = testaNumeri(n1, n2);
+            console.log(uscita);
+
+        }
+        // var uscita = testaNumeri(10, 50);
+        // console.log(uscita);
+
+        var Persona1 = {
+            nome: "Dario",
+            cognome: "Mennillo",
+            Cf: '6846+54654684'
+        }
+
+        //costruttore 
+        function Persona(nome, cognome, CF) {
+            this.nome = nome;
+            this.cognome = cognome;
+            this.CF = CF;
+
+            this.toString = function () {
+                return this.nome + ' ' + this.cognome + ' CF: ' + this.CF
+            }
+        }
+
+        var dario = new Persona('Dario', 'Mennillo', 98795462130)
+
+        console.log(dario.toString());
+
+
+        var frutta = ['Kiwi', 'Pere', 'Mele', 'Anguria'];
+
+        console.log(frutta[0]); //---> Kiwi
+        console.log(frutta[1]); //---> Pere
+        console.log(frutta.length); // --> 4
+
+        for (var i = 0; i < frutta.length; i++) { //i++ ad ogni giro aumenta la i di 1
+            console.log(frutta[i]);
+        }
+
+
+        //esercizio 9
+        function capitalize(str) {
+            //taglio la stringa ogni parola
+            str = str.split(' '); //array di parola
+
+            //leggo l'array parola per parola e metto la maiuscola alla prima lettera
+            for (var i = 0; i < str.length; i++) {
+                // console.log(str[i]);
+                str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+            }
+
+            return str.join(' ');
+        }
+
+
+        console.log(capitalize('andiamo in pausaaaaaaa'));
+
+     
+    </script>
+</body>
+
+</html>

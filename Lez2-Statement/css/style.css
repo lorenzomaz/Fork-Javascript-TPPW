@@ -1,0 +1,25 @@
+.dimImg{
+    height: 300px;
+    width: auto;
+}
+
+.numero{
+    float: left;
+    width: 30px;
+    height: 30px;
+    border: 2px solid blue;
+    border-radius: 25px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    margin: 5px;
+    font-size: 20px;
+}
+
+.striscia{
+}
+
+.titolo{
+    margin-top: 50px;
+    padding-left: 0;
+}

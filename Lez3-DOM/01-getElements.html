@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1>Lista</h1>
+
+    <ul id="lista">
+        <li class="hot">Pc</li>
+        <li class="hot">Libro</li>
+        <li class="hot">Occhiali</li>
+        <li class="hot">K-way</li>
+        <li class="hot">Penne</li>
+    </ul>
+
+
+    <script>
+
+        //GET EL BY ID
+        // var ul = document.getElementById('lista');
+        // console.log(ul);
+
+        //Prendo tutti gli elementi li
+        var lis = document.getElementsByTagName('li'); //NODELIST simile ARRAY
+        console.log(lis);
+        //Prendo un elemento dalla lista 
+        console.log(lis[2]); //trattato come un array
+        console.log(lis.item(2)); //trattato con il un metodo delle nodelist
+
+        console.log(lis.length); // 5 elementi
+
+        //Posso utilizzare un ciclo for per scorrere gli elementi di questa nodelist
+        for(var i = 0; i < lis.length; i++){
+            // console.log(lis[i]); //stampo i singoli oggetti
+            console.log(lis[i].innerHTML); //stampo il testo degli oggetti 
+
+            //cambio la classe a tutti i miei li
+            lis[i].setAttribute('class', 'cool');
+            
+        }
+
+
+        // //GET ELEMENTS BY CLASS NAME
+        // var lis = document.getElementsByClassName('hot');
+        // console.log(lis);
+
+
+
+
+
+
+    </script>
+    
+
+
+
+</body>
+</html>

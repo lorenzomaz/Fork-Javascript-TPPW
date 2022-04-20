@@ -1,0 +1,21 @@
+.hot{
+    color: red;
+}
+
+.cool{
+    color: blue;
+}
+
+.sottolineato{
+    text-decoration: underline;
+}
+
+/* img{
+    width: 100px;
+    height: auto;
+} */
+
+.dimLoc{
+    width: 200px;
+    height: auto;
+}
