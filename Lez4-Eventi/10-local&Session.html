@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Come salvare dati nella Local e nella Session Storage</h1>
+    
+    <input type="text" id="username" placeholder="username" name="username"><br>
+    <input type="text" id="password" placeholder="password" name="password"><br>
+    <input id='btn' type="button" value="Login">
+    <input type="button" id="btnOut" value="Logout"> <br>
+
+    <div id="demo">
+
+    </div>
+
+
+    <script>
+        var btn = document.querySelector('#btn');
+        var btnOut = document.querySelector('#btnOut');
+
+        var username = document.querySelector('#username');
+        var password = document.querySelector('#password');
+
+        btn.addEventListener('click', function(){
+            localStorage.setItem('Nome Utente', username.value);
+            localStorage.setItem('Pass Utente', password.value);
+            checkLogin();
+            
+        });
+
+        btnOut.addEventListener('click', function(){
+            localStorage.removeItem('Nome Utente');
+            localStorage.removeItem('Pass Utente');
+            // localStorage.clear()
+            checkLogin()
+        })
+
+        var demo = document.querySelector('#demo');
+
+        // demo.innerHTML = 'L\'utente loggato è: ' + localStorage.getItem('Nome Utente');
+        function checkLogin(){
+            console.log(localStorage.length == 0);
+            if(localStorage.getItem('Nome Utente') == ''){
+                demo.innerHTML = 'Non c\'è nessun utente collegato'
+            }else{
+                demo.innerHTML = 'L\'utente loggato è: ' + localStorage.getItem('Nome Utente');
+            }
+        }
+    </script>
+</body>
+</html>

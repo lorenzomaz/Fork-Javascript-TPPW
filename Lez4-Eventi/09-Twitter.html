@@ -13,12 +13,16 @@
     <h1>Twitter</h1>
     <p>Scrivi il tuo Tweet e imposta l'immagine del tuo Avatar</p>
     <div class="row">
+        <!-- Tweet -->
     <div class="col-6">
         <div class="form-floating">
-            <textarea class="form-control" placeholder="Inserisci il tuo Tweet" id="floatingTextarea"  style="height: 220px"></textarea>
-            <label for="floatingTextarea">Tweet</label>
+            <textarea class="form-control" placeholder="Inserisci il tuo Tweet" id="messaggio"  style="height: 220px"></textarea>
+            <label for="messaggio">Tweet</label>
           </div>
+          <div id="carRes">140</div>
     </div>
+
+    <!-- Immagine -->
     <div class="col-6">
         <img class=" col-6 img-thumbnail rounded-circle" src="" alt="" id="avatar"><br>
         <div class="mt-3 col-6">
@@ -40,11 +44,26 @@
                 let miaImm = document.querySelector('#avatar');
                 miaImm.src = dataURL;
             };
-
             reader.readAsDataURL(input.files[0]);
-
-            
         }
+
+
+        function contaCaratteri(){
+            var txtInserito = document.querySelector('#messaggio').value;
+            var carRes = document.querySelector('#carRes');
+            var contatore = (140 - txtInserito.length);
+            carRes.innerHTML = contatore;
+
+            if(contatore <= 0){
+                var tweet = document.querySelector('#messaggio').value.substring(0,140);
+                elMessaggio.value = tweet;
+            }
+        }
+
+        var elMessaggio = document.querySelector('#messaggio'); //textarea
+        elMessaggio.addEventListener('keyup', contaCaratteri, false);
+
+
     </script>
 </body>
 </html>

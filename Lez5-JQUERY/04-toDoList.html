@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <h1>To Do List</h1>
+    <input type="text" id="item" name="item"><br>
+    <input type="button" id="btn" value="Invia">
+
+    <div id="demo">
+        <ul id="lista">
+
+        </ul>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        //creo elemento
+        $('#btn').on('click', function(){
+            var item = $('#item').val();
+            $('#lista').append('<li>' + item + '<button class="btnEl"> X </button></li>');
+            $('#item').val('');//reset del campo input
+            // $('.btnEl').on('click', function(){
+            //     $(this).parent().remove()
+            // })
+        });
+
+        //Tasto Invio 
+        $('#item').keyup(function(event){
+            if(event.keyCode == 13){
+                $('#btn').click()
+            }
+        });
+
+       $(document).on('click', '.btnEl', function(){
+           $(this).parent().remove();
+       });
+
+       $(document).on('click', 'li', colora);
+       
+       function colora(){
+           $(this).addClass('rosso');
+       }
+       
+      
+
+
+    </script>
+</body>
+</html>

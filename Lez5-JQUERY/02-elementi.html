@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="page">
+
+        <h1 id="titolo">Test Jquery</h1>
+        <h2>Prova della libreria</h2>
+        <p id="parag"> Proviamo Jquery per la prima volta</p>
+        <ul>
+            <li id="uno" class="rosso">Javascript</li>
+            <li id="due" class="rosso">Html & CSS</li>
+            <li id="tre" class="rosso">MySql</li>
+            <li id="quattro" class="rosso">Bootstrap</li>
+        </ul>
+
+        <div id="demo"></div>
+
+        <button>Nascondi Lista</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        //Utilizzo ready function
+        $(function(){
+
+            // //recupero html
+            // var $listaHTML = $('ul').html();
+            // console.log($listaHTML);
+
+            // //aggiungo qualcosa alla lista
+            // var parola = 'QUALCOSA';
+            // $('ul').append('<li>' + parola +'</li>');
+            // $('li:last').attr('class', 'blu');
+
+
+            // //recupero solo test
+            // var $testoLI = $('li:last').text();
+            // console.log("Il primo li è : " + $testoLI);
+
+            // //aggiungo una parola ad ogni li 
+            // $('li').append('->> Studiato');
+
+            // //manipolazione singolo li
+            // $('li#uno').removeAttr('class');
+
+            // $('li.blu').removeClass('blu');
+
+
+            // //CSS
+            // $('li').css(
+            //     {
+            //         'background-color': 'green',
+            //         'border': '2px solid black',
+            //         'padding' : '5px'
+            //     }
+            // )
+
+            //EACH
+            //voglio scrivere il valore dell'id accanto ad ogni li 
+            //ad ogni li associo una funzione
+            $('li').each(function(){
+                var idSelezionati = this.id;
+                $(this).append('<span class = "blu"> Il mio id è : ' + idSelezionati + '</span>');
+            })
+
+
+
+        }) //Fine ready Function
+    </script>
+</body>
+</html>
