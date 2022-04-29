@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="page">
+
+        <h1 id="titolo">Test Jquery</h1>
+        <h2>Prova della libreria</h2>
+        <p id="parag"> Proviamo Jquery per la prima volta</p>
+        <ul>
+            <li id="uno" class="rosso">Javascript</li>
+            <li id="due" class="rosso">Html & CSS</li>
+            <li id="tre" class="rosso">MySql</li>
+            <li id="quattro" class="rosso">Bootstrap</li>
+        </ul>
+
+        <div id="demo"></div>
+
+        <button>Nascondi Lista</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    //voglio scrivere l'id del singolo elemento li ogni volta che passo col mouse sopra l'elemnto
+
+    $(function(){
+        var $ids = '';
+        var $els = $('li');
+
+        $els.on('mouseover', function(){
+            $ids = this.id;
+            $(this).append('<span class= "rosso"> Il mio id è: ' + $ids + '</span>');
+        });
+
+        $els.on('mouseout', function(){
+            $(this).children('span').remove()
+        })
+
+
+
+
+    })
+
+
+    </script>
+
+
+
+</body>
+</html>
