@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formato JSON</h1>
+
+    <div id="demo"></div>
+    <img id="img" src="" width="200px" height="200px">
+
+    <script>
+    var demo = document.querySelector('#demo');
+    var img = document.querySelector('#img');
+
+    //Il formato JSON è una stringa contenente informazioni, dati
+
+    //Oggetti JS
+    var studente = {
+        nome: "Dario Mennillo",
+        matricola: 1,
+        materie: ['Javascript', 'Java', 'HTML&CSS']
+    }
+
+    //Notazione Intermedia
+    var studenteInt ={
+        "nome": "Dario Mennillo",
+        "matricola": "1",
+        "materie": "['Javascript', 'Java', 'HTML&CSS']"
+    }
+
+    //Notazione JSON
+
+    var utenteJSON = '{"nome": "Dario", "matricola": 2, "Tipo": "Amministratore"}'; //stringa
+
+    console.log(typeof utenteJSON);
+    console.log(utenteJSON.nome);
+
+    //trasformo l'oggetto JSON in un oggetto Javascript
+    var utenteJS = JSON.parse(utenteJSON);
+    console.log(utenteJS);
+    console.log(utenteJS.nome);
+
+    var utente7 = '{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"}'
+    var utente7JS = JSON.parse(utente7);
+    console.log(utente7JS);
+    demo.innerHTML = utente7JS.first_name + ' ' + utente7JS.last_name;
+    img.src = utente7JS.avatar;
+    
+    //trasformo l'oggetto JS in un JSON
+    var mioUtente = {
+        id: 8,
+        email: "pippo@mail.com",
+        nome: "Pippo",
+        cognome: "Rossi",
+    }
+
+    var mioUtenteJSON = JSON.stringify(mioUtente);
+    console.log(mioUtenteJSON);
+
+
+
+    </script>
+</body>
+</html>
