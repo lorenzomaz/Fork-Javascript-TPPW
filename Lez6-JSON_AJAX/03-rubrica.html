@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Rubrica</h1>
+    <div id="demo"></div>
+    <ul id="lista"></ul>
+
+    <hr>
+
+    <div id="singoloUser"></div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    var url = "https://reqres.in/api/users";
+    var lista = $('ul')[0];
+    var singoloUser = $('#singoloUser')[0];
+
+    fetch(url)
+    .then(data => {return data.json()})
+    .then(response => {
+ 
+        mostraDati(response.data);
+    });
+
+    function mostraDati(dati){
+        console.log(dati);
+        dati.forEach(element => {
+            var li = document.createElement('li');
+            li.innerHTML = element.first_name + ' ' + element.last_name;
+            lista.appendChild(li);
+            
+            li.onclick = function(){
+                singoloUser.innerHTML = creaCard(element.first_name, element.last_name, element.email, element.avatar);
+            }
+        });
+    }
+
+    function creaCard(nome, cognome, mail, avatar){
+        var card = '<div class="card">' +   
+            '<img src = "'+ avatar + '">'+
+            '<div class="card-body"> ' + 
+                '<h5> ' + nome + ' ' + cognome + '</h5>' + 
+                '<p>' + mail + '</p>'+
+            '</div>'+
+            '</div>';
+            
+        return card;
+    }
+
+    $('#singoloUser').on('click', function(){
+        singoloUser.innerHTML = '';
+    })
+
+
+
+
+    </script>
+</body>
+</html>

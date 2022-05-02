@@ -46,12 +46,14 @@
         // demo.innerHTML = 'L\'utente loggato è: ' + localStorage.getItem('Nome Utente');
         function checkLogin(){
             console.log(localStorage.length == 0);
-            if(localStorage.getItem('Nome Utente') == ''){
+            if(localStorage.getItem('Nome Utente') == null){
                 demo.innerHTML = 'Non c\'è nessun utente collegato'
             }else{
                 demo.innerHTML = 'L\'utente loggato è: ' + localStorage.getItem('Nome Utente');
             }
         }
+
+        
     </script>
 </body>
 </html>
