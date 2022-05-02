@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Test Json-server</h1>
+    <p>Lanciare nel terminale il seguente comando: npm install -g json-server</p>
+
+    <h2>Utenti</h2>
+    <div id="demo"></div>
+
+    <hr>
+
+    <button id="btnAdd">Aggiungi Nicola</button>
+
+    <hr>
+
+    <h2>Compila per aggiungere un utente</h2>
+    <form method="post" id="mioForm" action="#">
+        <input type="text" name="nome" id="nome" placeholder="nome"><br>
+        <input type="text" name="ruolo" id="ruolo" placeholder="ruolo"><br>
+        <input type="button" value="Aggiungi" id="btnAgg">
+    </form>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+    var demo = document.querySelector('#demo');
+    var btnAdd = document.querySelector('#btnAdd');
+
+    //prendo gli utenti dal DB
+    $.ajax({
+        url: 'http://localhost:3000/utenti',
+        type: "GET",
+        dataType: "json",
+        success: function(response){
+            console.log(response);
+            for(var i = 0; i < response.length; i++){
+                demo.innerHTML += '<h4>' + response[i].nome + '</h4>';
+                demo.innerHTML += '<p> Ruolo: ' + response[i].ruolo + '</p>';
+            }
+        }
+    });
+
+    //aggiungo utenti al db.json
+    function aggiungiNicola(){
+        $.ajax({
+            url:'http://localhost:3000/utenti',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                nome: "Nicola",
+                ruolo: "Amministratore"
+            },
+            success: function(response){
+                console.log(response);
+            }
+        })
+    }
+
+    btnAdd.addEventListener('click', aggiungiNicola, false);
+    
+    
+    var mioForm = document.querySelector('#mioForm');
+    var btnAgg = document.querySelector('#btnAgg');
+
+    function aggiungiUtente(){
+        var nome = document.querySelector('#nome').value;
+        var ruolo = document.querySelector('#ruolo').value;
+        $.ajax({
+            url:'http://localhost:3000/utenti',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                nome: nome,
+                ruolo: ruolo
+            },
+            success: function(response){
+                console.log(response);
+            }
+        })
+    }
+
+    // mioForm.addEventListener('submit', aggiungiUtente, false);
+    btnAgg.addEventListener('click', aggiungiUtente, false);
+
+
+
+    </script>
+</body>
+</html>
