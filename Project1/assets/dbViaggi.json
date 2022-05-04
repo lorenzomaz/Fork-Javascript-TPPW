@@ -4,21 +4,21 @@
       "nome": "Hawaii",
       "immagine": "./img/viaggio_Hawaii.jpg",
       "descrizione": "Fantastico viaggio nelle isole del Pacifico",
-      "acquistato": "true",
+      "acquistato": "false",
       "id": 1
     },
     {
       "nome": "Petra",
       "immagine": "https://static.ohga.it/wp-content/uploads/sites/24/2021/03/iStock-1170941515.jpg",
       "descrizione": "Viaggio nella città più famosa della Giordania",
-      "acquistato": "true",
+      "acquistato": "false",
       "id": 2
     },
     {
       "nome": "Mont Saint Michel",
       "immagine": "https://travel.thewom.it/pictures/2018/06/11/mont-saint-michel_4.jpeg",
       "descrizione": "Attenti alla marea",
-      "acquistato": "false",
+      "acquistato": "true",
       "id": 3
     }
   ]

@@ -21,19 +21,21 @@ $(function(){
         '<div class="card-body">'+
           `<h5 class="card-title">${nome}</h5>`+
           `<p class="card-text">${descrizione}</p>`+
-          `<a href="#" class="btn btn-primary" id="btnCompra">Compra</a>`+
+          `<a href="#" class="btn btn-primary" id="btnCompra${id}">Compra</a>`+
         '</div>'+
       '</div>';
     
     
       
-      $(document).on('click', '#btnCompra', function(){
-          acquista(id, nome, immagine, descrizione);
-          console.log('ciao');
-      });
-          
       $('#contCards').append(card);
       
+      $(document).on('click', '#btnCompra'+id, function(){
+      acquista(id, nome, immagine, descrizione);
+          console.log(id);
+          console.log(nome);
+          console.log(immagine);
+      });
+    
     }
     
 });
