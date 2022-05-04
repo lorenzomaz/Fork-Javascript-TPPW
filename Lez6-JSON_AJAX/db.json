@@ -1,46 +1,5 @@
 {
-  "utenti": [
-    {
-      "id": 1,
-      "nome": "Dario",
-      "ruolo": "Amministratore"
-    },
-    {
-      "id": 2,
-      "nome": "Davide",
-      "ruolo": "Amministratore"
-    },
-    {
-      "nome": "Nicola",
-      "ruolo": "Amministratore",
-      "id": 3
-    },
-    {
-      "nome": "Pippo",
-      "ruolo": "Utente Base",
-      "id": 4
-    },
-    {
-      "nome": "PincoPallino",
-      "ruolo": "Prova",
-      "id": 5
-    },
-    {
-      "nome": "Mario",
-      "ruolo": "Test",
-      "id": 6
-    },
-    {
-      "nome": "",
-      "ruolo": "",
-      "id": 7
-    },
-    {
-      "nome": "Ciao",
-      "ruolo": "Ciao",
-      "id": 8
-    }
-  ],
+  "utenti": [],
   "clienti": [
     {
       "id": 1,
