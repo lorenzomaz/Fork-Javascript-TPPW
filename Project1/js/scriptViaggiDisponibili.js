@@ -1,6 +1,5 @@
 $(function(){
 
-
     $.ajax({
         url: 'http://localhost:3000/viaggi',
         type: "GET",
@@ -8,15 +7,31 @@ $(function(){
         success: function(response){
             console.log(response);
             for(var i = 0; i < response.length; i++){
-                costruisciCard(response[i].id, response[i].nome, response[i].immagine, response[i].descrizione);
+                costruisciCard(response[i].id, response[i].nome, response[i].immagine, response[i].descrizione, response[i].acquistato);
+                viaggi.push(response[i]);
             }
         
+        },
+        complete: function(){
+        
+            // $('.card').each(function(){
+            // //   console.log($(this).attr('data-acq'));
+                
+            //     if($(this).attr('data-acq') == "true"){
+            //         console.log('Già acquistato');
+            //         $('.btn').addClass('disabled')
+            //     }
+            // })
+            
         }
     });
 
+    
+    let viaggi = [];
+    console.log(viaggi);
 
-    function costruisciCard(id, nome, immagine, descrizione){
-        let card = `<div class="card col-3" data-id="${id}" >`+
+    function costruisciCard(id, nome, immagine, descrizione, acquistato){
+        let card = `<div class="card col-3" data-id="${id}" data-acq="${acquistato}" >`+
         `<img class="card-img-top" src="${immagine}" alt="Card image cap">`+  //Alt + 96 -> backtick
         '<div class="card-body">'+
           `<h5 class="card-title">${nome}</h5>`+
@@ -25,17 +40,14 @@ $(function(){
         '</div>'+
       '</div>';
     
-    
       
+
       $('#contCards').append(card);
       
-      $(document).on('click', '#btnCompra'+id, function(){
+      $(document).on('click', '#btnCompra'+id, function(){     
       acquista(id, nome, immagine, descrizione);
-          console.log(id);
-          console.log(nome);
-          console.log(immagine);
       });
-    
+      
     }
     
 });
