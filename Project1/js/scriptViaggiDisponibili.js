@@ -21,7 +21,7 @@ $(function(){
         '<div class="card-body">'+
           `<h5 class="card-title">${nome}</h5>`+
           `<p class="card-text">${descrizione}</p>`+
-          `<a href="#" class="btn btn-primary" id="btnCompra">Go somewhere</a>`+
+          `<a href="#" class="btn btn-primary" id="btnCompra">Compra</a>`+
         '</div>'+
       '</div>';
     
