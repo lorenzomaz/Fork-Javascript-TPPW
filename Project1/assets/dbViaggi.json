@@ -21,8 +21,18 @@
       "immagine": "https://source.unsplash.com/1920x1080/?mont+saint+michel",
       "descrizione": "Attenti alla marea",
       "acquistato": "true",
+      "prezzo": 1500,
       "id": 3
+    },
+    {
+      "nome": "Thailandia",
+      "immagine": "https://source.unsplash.com/1920x1080/?thailand",
+      "descrizione": "Un viaggio tra natura, mare e zanzare.",
+      "acquistato": "true",
+      "prezzo": 1500,
+      "id": 4
     }
+
   ]
 }
 

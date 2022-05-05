@@ -31,14 +31,14 @@ $(function(){
     console.log(viaggi);
 
     function costruisciCard(id, nome, immagine, descrizione, acquistato){
-        let card = `<div class="card col-3" data-id="${id}" data-acq="${acquistato}" >`+
+        let card = `<div class="col mb-3"><div class="card" data-id="${id}" data-acq="${acquistato}" >`+
         `<img class="card-img-top" src="${immagine}" alt="Card image cap">`+  //Alt + 96 -> backtick
         '<div class="card-body">'+
           `<h5 class="card-title">${nome}</h5>`+
           `<p class="card-text">${descrizione}</p>`+
           `<a href="#" class="btn btn-primary" id="btnCompra${id}">Compra</a>`+
         '</div>'+
-      '</div>';
+      '</div>'+'</div>';
     
       
 
