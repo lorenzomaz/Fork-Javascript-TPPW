@@ -2,7 +2,7 @@
   "viaggi": [
     {
       "nome": "Hawaii",
-      "immagine": "https://source.unsplash.com/1920x1080/?hawaii",
+      "immagine": "./img/viaggio_Hawaii.jpg",
       "descrizione": "Fantastico viaggio nelle isole del Pacifico",
       "acquistato": "false",
       "prezzo": 2500,
@@ -10,29 +10,18 @@
     },
     {
       "nome": "Petra",
-      "immagine": "https://source.unsplash.com/1920x1080/?petra",
+      "immagine": "https://static.ohga.it/wp-content/uploads/sites/24/2021/03/iStock-1170941515.jpg",
       "descrizione": "Viaggio nella città più famosa della Giordania",
       "acquistato": "true",
-      "prezzo": 1500,
+      "prezzo": 1500, 
       "id": 2
     },
     {
       "nome": "Mont Saint Michel",
-      "immagine": "https://source.unsplash.com/1920x1080/?mont+saint+michel",
+      "immagine": "https://travel.thewom.it/pictures/2018/06/11/mont-saint-michel_4.jpeg",
       "descrizione": "Attenti alla marea",
       "acquistato": "true",
-      "prezzo": 1500,
       "id": 3
-    },
-    {
-      "nome": "Thailandia",
-      "immagine": "https://source.unsplash.com/1920x1080/?thailand",
-      "descrizione": "Un viaggio tra natura, mare e zanzare.",
-      "acquistato": "true",
-      "prezzo": 1500,
-      "id": 4
     }
-
   ]
 }
-
