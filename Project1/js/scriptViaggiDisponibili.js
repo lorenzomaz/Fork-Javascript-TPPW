@@ -13,15 +13,16 @@ $(function(){
         
         },
         complete: function(){
-            //voglio verificare se la prop data-acq nella card è true o false
+        
             $('.card').each(function(){
-
-                if($(this).attr('data-acq') == 'true'){
-
-                    $(this).find('.card-body').append('<p> Viaggio già acquistato </p>');
+            
+                if($(this).attr('data-acq') == "true"){
+                    console.log('Già acquistato');
+                    $(this).find('.card-body').append('<p class="text-start">Viaggio già inserito nel carrello</p>')
                     $(this).find('.btn').addClass('disabled');
                 }
             })
+            
         }
        
     });
