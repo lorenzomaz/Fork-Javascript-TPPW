@@ -19,6 +19,10 @@ $(function(){
                 console.log(viaggi[i]);
                }
            }
+
+           if(totalePrezzo == 0){
+               $('#btnAcq').hide();
+           }
             
         },
         complete: function(){
@@ -34,8 +38,6 @@ $(function(){
     }
 
     $(document).on('click', '#btnAcq', function(){
-        $('#listaTotale').fadeOut(1500)
-        $('#feedback').hide().fadeIn(2000).append('<h2>Grazie per aver acquistato i nostri viaggi !</h2>');
         restoreViaggi(viaggiAll)
     });
 
