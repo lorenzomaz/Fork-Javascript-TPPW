@@ -66,6 +66,9 @@ function acquista(id, nome, immagine, descrizione, prezzo){
             descrizione: descrizione,
             acquistato: true,
             prezzo: prezzo
+        },
+        complete: function(){
+            // senza refresh pagina ??
         }
     })
 }

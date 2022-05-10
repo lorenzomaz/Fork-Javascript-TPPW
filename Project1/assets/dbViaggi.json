@@ -4,7 +4,7 @@
       "nome": "Hawaii",
       "immagine": "https://source.unsplash.com/800x800/?Hawaii",
       "descrizione": "Fantastico viaggio nelle isole del Pacifico",
-      "acquistato": "false",
+      "acquistato": "true",
       "prezzo": "2500",
       "id": 1
     },
@@ -12,7 +12,7 @@
       "nome": "Petra",
       "immagine": "https://source.unsplash.com/800x800/?Petra",
       "descrizione": "Viaggio nella città più famosa della Giordania",
-      "acquistato": "false",
+      "acquistato": "true",
       "prezzo": "1800",
       "id": 2
     },
@@ -20,7 +20,7 @@
       "nome": "Mont Saint Michel",
       "immagine": "https://source.unsplash.com/800x800/?Mont+Saint+Michel",
       "descrizione": "Attenti alla marea",
-      "acquistato": "false",
+      "acquistato": "true",
       "prezzo": "800",
       "id": 3
     },
@@ -28,7 +28,7 @@
       "nome": "San Francisco",
       "immagine": "https://source.unsplash.com/800x800/?San+Francisco",
       "descrizione": "California",
-      "acquistato": "false",
+      "acquistato": "true",
       "prezzo": "2600",
       "id": 4
     },
@@ -39,6 +39,30 @@
       "acquistato": "false",
       "prezzo": "1500",
       "id": 5
+    },
+    {
+      "nome": "Miami",
+      "immagine": "https://source.unsplash.com/800x800/?Miami",
+      "descrizione": "Welcome to Miami",
+      "prezzo": "3000",
+      "acquistato": "false",
+      "id": 6
+    },
+    {
+      "nome": "Berlino",
+      "immagine": "https://source.unsplash.com/800x800/?Berlin",
+      "descrizione": "La capitale d'Europa",
+      "acquistato": "true",
+      "prezzo": "1000",
+      "id": 7
+    },
+    {
+      "nome": "Capri",
+      "immagine": "https://source.unsplash.com/800x800/?Capri",
+      "descrizione": "Viaggio nell'isola Blu",
+      "prezzo": "3500",
+      "acquistato": "false",
+      "id": 8
     }
   ]
 }
