@@ -23,6 +23,22 @@
       "acquistato": "false",
       "prezzo": "800",
       "id": 3
+    },
+    {
+      "nome": "San Francisco",
+      "immagine": "https://source.unsplash.com/800x800/?San+Francisco",
+      "descrizione": "California",
+      "acquistato": "false",
+      "prezzo": "2600",
+      "id": 4
+    },
+    {
+      "nome": "Roma",
+      "immagine": "https://source.unsplash.com/800x800/?Rome",
+      "descrizione": "La città Eterna",
+      "acquistato": "false",
+      "prezzo": "1500",
+      "id": 5
     }
   ]
 }

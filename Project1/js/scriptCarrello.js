@@ -53,6 +53,9 @@ $(function(){
                 descrizione: viaggi[i].descrizione,
                 acquistato: false,
                 prezzo: viaggi[i].prezzo
+            },
+            complete: function(){
+                window.location.href = "./thanks.html"
             }
         })
     }
