@@ -10,7 +10,6 @@ $(function(){
                 costruisciCard(response[i].id, response[i].nome, response[i].immagine, response[i].descrizione, response[i].acquistato, response[i].prezzo);
                 viaggi.push(response[i]);
             }
-        
         },
         complete: function(){
         

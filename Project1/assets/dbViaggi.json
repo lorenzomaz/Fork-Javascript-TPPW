@@ -4,7 +4,7 @@
       "nome": "Hawaii",
       "immagine": "https://source.unsplash.com/800x800/?Hawaii",
       "descrizione": "Fantastico viaggio nelle isole del Pacifico",
-      "acquistato": "true",
+      "acquistato": "false",
       "prezzo": "2500",
       "id": 1
     },
@@ -13,7 +13,7 @@
       "immagine": "https://source.unsplash.com/800x800/?Petra",
       "descrizione": "Viaggio nella città più famosa della Giordania",
       "acquistato": "false",
-      "prezzo": 1800,
+      "prezzo": "1800",
       "id": 2
     },
     {
@@ -21,7 +21,7 @@
       "immagine": "https://source.unsplash.com/800x800/?Mont+Saint+Michel",
       "descrizione": "Attenti alla marea",
       "acquistato": "false",
-      "prezzo": 800,
+      "prezzo": "800",
       "id": 3
     }
   ]
