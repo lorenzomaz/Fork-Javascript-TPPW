@@ -27,6 +27,9 @@
         <input type="button" value="Aggiungi" id="btnAgg">
     </form>
 
+    <hr>
+
+    <button id="btnRem">Rimuovi Utente</button>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -54,6 +57,8 @@
             for(var i = 0; i < response.length; i++){
                 demo.innerHTML += '<h4>' + response[i].nome + '</h4>';
                 demo.innerHTML += '<p> Ruolo: ' + response[i].ruolo + '</p>';
+                demo.innerHTML += '<button class="btnRem" onclick = rimuoviUtente('+response[i].id+')> Rimuovi utente </button>';
+                demo.innerHTML += '<hr>'
             }
         }
     });
@@ -101,6 +106,19 @@
     btnAgg.addEventListener('click', aggiungiUtente, false);
 
 
+    function rimuoviUtente(id){
+        $.ajax({
+            url: 'http://localhost:3000/utenti/'+id,// con /3 indico la rimozione dell'utente con id = 3
+            type: 'DELETE',
+            dataType: 'json',
+            success: function(){
+                console.log('rimozione completata');
+            }
+        });
+    }
+
+    
+  
 
     </script>
 </body>

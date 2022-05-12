@@ -1,0 +1,1 @@
+$('#feedback').hide().fadeIn(1500);

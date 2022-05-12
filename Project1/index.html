@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<!--     GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+<!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+/>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Progetto Viaggi</title>
+  </head>
+  <body>
+      <!-- NAVBAR -->
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+          <div class="container-lg">
+            <a class="navbar-brand" href="#"><img class="logo" src="img/logo.svg" alt="Progetto viaggi"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./viaggiDisponibili.html">Viaggi Disponibili</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="./gestisciViaggi.html" >Gestisci Viaggi</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link " href="./carrello.html"><i data-feather="shopping-cart"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="./login.html"><i data-feather="log-in"></i></a>
+                    </li>
+                </ul>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- FINE HEADER -->
+
+      
+      <main>
+
+        <section id="hero">
+
+          <!-- VERSIONE EASY SENZA SLIDER 
+          <div class="banner" style="background:url(https://source.unsplash.com/1920x1080/?travel); background-repeat:no-repeat; background-size: cover; background-position:center center; height:100vh"></div>
+          -->
+
+  <div class="container mt-5">
+  <!-- Slider main container -->
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+
+        <img class="img-fluid" src="https://source.unsplash.com/1920x1080/?hawaii" alt="">
+
+        <div class="slideInfo p-3">
+          <h2>Nome viaggio</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta accusantium nostrum alias!</p>
+          <p>Prezzo: 1000€</p>
+        </div>
+
+
+      </div>
+      <div class="swiper-slide">
+        <img class="img-fluid" src="https://source.unsplash.com/1920x1080/?petra" alt="">
+
+        <div class="slideInfo p-3">
+          <h2>Nome viaggio</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta accusantium nostrum alias!</p>
+          <p>Prezzo: 1000€</p>
+        </div>
+
+      </div>
+  
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+</div>
+
+        </section>
+
+        <section id="chisiamo">
+
+          <div class="container">
+            <div class="row">
+
+              <div class="col-md-6">
+                <img class="img-fluid" src="https://source.unsplash.com/680x420/?team" alt="">
+              </div>
+              <div class="col-md-6 mt-3 mt-lg-0">
+                <h2>Chi siamo</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia eaque fugit sapiente consequatur debitis consequuntur. Aliquam, quam aperiam? Sed, facere.</p>
+
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis facilis sequi corrupti, adipisci id, modi nemo odio odit maiores, quibusdam ut magnam. Deserunt voluptate amet hic exercitationem aspernatur!</p>
+
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In fuga beatae asperiores!</p>
+              </div>
+
+            </div>
+          </div>
+
+        </section>
+
+        <section id="dovesiamo">
+
+          <div class="container">
+            <div class="row">
+
+              <div class="col-md-6 map">
+                <!-- ALTERNATIVA VELOCE ZERO SBATTIMENTO PER LA MAPPA: -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.184133389617!2d-73.98773128460493!3d40.75797467932693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sit!2sit!4v1651743575921!5m2!1sit!2sit" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+
+              <div class="col-md-6 mt-3 mt-lg-0">
+                <h2>Dove Siamo</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia eaque fugit sapiente consequatur debitis consequuntur. Aliquam, quam aperiam? Sed, facere.</p>
+
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis facilis sequi corrupti, adipisci id, modi nemo odio odit maiores, quibusdam ut magnam. Deserunt voluptate amet hic exercitationem aspernatur!</p>
+
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In fuga beatae asperiores!</p>
+
+               <h3 class="mb-3">Contatti:</h3>
+               <p>
+                 <i data-feather="map-pin"></i> Via Roma 12, 10100 Torino<br>
+                 <i data-feather="phone"></i> +39 333 88 22 111<br>
+                 <i data-feather="mail"></i> info@mycompany.com
+                 
+               </p>
+
+              </div>
+
+            </div>
+          </div>
+
+        </section>
+      
+
+
+      </main>
+
+    <!-- FOOTER -->
+    <footer class="footer mt-5 py-3 bg-light">
+        <div class="container">
+            <p class="float-end"><a href="#">Back to top</a></p>
+            <p>&copy; 2017–2021 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </div>
+    </footer>
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!-- RISORSE PER ICONE FeatherIcons -->
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+<!-- Js per Swiper -->
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+
+<script>
+  feather.replace() //inizializzo feather icons
+</script>
+
+<!-- Inizializzo Swiper -->
+<script>
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  //direction: 'vertical',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+
+</script>
+
+
+    <script src="js/script.js"></script>
+    
+  </body>
+</html>
