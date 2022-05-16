@@ -1,0 +1,61 @@
+<h1>Nuovi Servers</h1>
+
+<button class="btn btn-primary" [disabled] = "!allowNewServer">Aggiungi Server</button>
+
+<p>Proprietà del pulsante {{allowNewServer}}</p>
+<!-- posso fare la stessa cosa con il property binding -->
+<!-- <p [innerText]="'Proprietà del pulsante ' + allowNewServer"></p> -->
+
+<h1>Event Binding Semplice</h1>
+<button
+class="btn btn-success"
+(click)="onCreaServer()">
+Crea</button>
+
+<p>{{serverCreationStatus}}</p>
+
+<hr>
+
+<h1>Event Binding con Parametri</h1>
+<label for="nomeServer">Nome Server</label>
+<input type="text" class="form-control"
+(input) = "onModificaServer($event)">
+
+<p>{{newServer}}</p>
+
+
+<hr>
+
+<h1>Two-WAY-DataBinding</h1>
+<!-- Non utilizzo metodi per cambiare o creare proprietà-->
+<!-- Devo obbligatoriamente importare i Forms Module nella app-module -->
+<label for="nomeServer2">Nome Server</label>
+<input type="text" class="form-control" [(ngModel)] = "serverName2">
+
+<p>{{serverName2}}</p>
+
+<hr>
+
+<h1>ngIf condizionale</h1>
+<p>Clicca sul tasto Crea per Creare un nuvo server</p>
+<!-- Direttive strutturali -->
+<p *ngIf="serverCreated; else noServer">{{serverCreationStatus}}</p>
+<!-- noServer è una specie di alias, chiamato Local Reference.-
+Queste Local reference vivono solo ed esclusivamente nel template -->
+<ng-template #noServer>
+  <p>Non hai creato ancora nessun server</p>
+</ng-template>
+
+<hr>
+<h1>ngFor</h1>
+<p>Utile per ripetere un pezzo di template</p>
+<ul *ngFor="let pippo of servers">
+  <li>{{pippo}}</li>
+</ul>
+
+
+<!-- ngFor possono anche essere applicati direttamente su un selettore di un component -->
+<hr>
+<h1>ngFor su selettore</h1>
+<p>Sto ciclando direttamente un component</p>
+<app-server-prova *ngFor="let server of servers"></app-server-prova>
