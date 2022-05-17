@@ -1,0 +1,20 @@
+<ol>
+  <li>Aggiungi un campo username e attraverso il sistema del Two-Way Databinding modifica, aggiorna la proprietà</li>
+  <li>Stampa lo Username nella pagina attraverso String Interpolation</li>
+  <li>Aggiungi un pulsante che può essere cliccato solo se lo Username NON è vuoto</li>
+  <li>Al click sul pulsante il campo va resettato</li>
+</ol>
+
+<label for="username">Username</label>
+<input type="text" class="form-control" [(ngModel)] = 'username'>
+<p>{{username}}</p>
+
+<button class="btn btn-success"
+        [disabled]="username === ''"
+        (click)="onReset()">Reset</button>
+
+        <!-- oppure -->
+
+<button class="btn btn-warning"
+        [disabled]="username === ''"
+        (click) = "username = ''">Reset senza metodo</button>

@@ -1,0 +1,12 @@
+<h1>{{title}}</h1>
+
+<div class="container">
+  <app-plancia (serverCreated)="onServerAdded($event)"></app-plancia>
+
+  <hr>
+
+
+    <app-server-element
+    *ngFor="let server of serverElements"
+    [elementoServer]="server"></app-server-element>
+  </div>

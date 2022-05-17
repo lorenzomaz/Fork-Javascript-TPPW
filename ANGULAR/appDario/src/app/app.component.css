@@ -1,0 +1,11 @@
+h1, h2, h3{
+    color: red;
+}
+
+.dimensioni{
+  width: 50%;
+}
+/*
+.bordo{
+  border: 2px solid black
+} */

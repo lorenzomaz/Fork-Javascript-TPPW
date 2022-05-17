@@ -1,0 +1,20 @@
+<h1>Server</h1>
+<p>Il server {{server}}, numero: {{serverID}} è : {{server}} </p>
+
+<p>Server Status con il metodo: {{getServerStatus()}}</p>
+
+<!-- DATABING -->
+<!-- Fatto anche sopra tramite string interpolation lo facciamo adesso trmiate il principio della
+property binding, utilizzando ngStyle e ngClass -->
+
+<p class='online'>Il server {{server}} è online</p>
+
+<!-- ngStyle -->
+<p [ngStyle]="{'background-color' : getColor()}">Il server è {{getServerStatus()}}</p>
+
+<!-- ngClass, applico dinamicamente una classe -->
+<p [ngClass]="{online: getServerStatus() === 'online'}">
+
+  Il server {{server}} è {{getServerStatus()}}
+
+</p>

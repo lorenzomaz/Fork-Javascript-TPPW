@@ -1,0 +1,5 @@
+Installare bootstrap (nella cartella del progetto):
+- npm install bootstrap
+- npm install jquery
+
+Fare gli import nel file angular.json
