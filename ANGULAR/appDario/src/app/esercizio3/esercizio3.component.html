@@ -11,6 +11,8 @@
 <p *ngIf="mostraDet">Password segreta = stoccafisso</p>
 
 <h6>Numero di click sul pulsante</h6>
-<ul *ngFor="let numClick of log">
+<ul *ngFor="let numClick of log; let i = index"
+    [ngStyle]="{backgroundColor: numClick > 5 ? 'blue': 'transparent'}"
+    [ngClass]="{'testo-bianco': numClick > 5}">
   <li>{{numClick}}</li>
 </ul>
