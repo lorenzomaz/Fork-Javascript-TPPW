@@ -1,0 +1,16 @@
+<ol>
+  <li>Aggiungi un pulsante "Mostra i dettagli"</li>
+  <li>Aggiungi un paragrafo con i dettagli</li>
+  <li>Mostra o nascondi questo paragrafo con il pulsante</li>
+  <li>Conta il numero di click fatti sul pulsante, inserisci in un array e mostrali nella pagina</li>
+  <li>Inizia con 5 "click" contati di base, ai successivi fornisci uno sfondo blu</li>
+</ol>
+
+<button class="btn btn-primary"
+        (click) = "onMostraDet()">Mostra Dettagli</button>
+<p *ngIf="mostraDet">Password segreta = stoccafisso</p>
+
+<h6>Numero di click sul pulsante</h6>
+<ul *ngFor="let numClick of log">
+  <li>{{numClick}}</li>
+</ul>

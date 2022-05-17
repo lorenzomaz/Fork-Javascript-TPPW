@@ -8,6 +8,12 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { ServerProvaComponent } from './server-prova/server-prova.component';
 import { PrimoEsercizioComponent } from './primo-esercizio/primo-esercizio.component';
+import { Test1Component } from './test1/test1.component';
+import { Test2Component } from './test2/test2.component';
+import { Test12Component } from './test1/test12/test12.component';
+import { Esercizio2Component } from './esercizio2/esercizio2.component';
+import { Esercizio3Component } from './esercizio3/esercizio3.component';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +22,12 @@ import { PrimoEsercizioComponent } from './primo-esercizio/primo-esercizio.compo
     ServerComponent,
     ServersComponent,
     ServerProvaComponent,
-    PrimoEsercizioComponent
+    PrimoEsercizioComponent,
+    Test1Component,
+    Test2Component,
+    Test12Component,
+    Esercizio2Component,
+    Esercizio3Component,
   ],
   imports: [
     BrowserModule,

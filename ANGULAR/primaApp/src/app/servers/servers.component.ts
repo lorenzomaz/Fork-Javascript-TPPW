@@ -39,9 +39,9 @@ export class ServersComponent implements OnInit {
   onModificaServer(event: any){
     console.log(event);
     console.log(event.target.value);
-    // this.newServer = event.target.value;
+    this.newServer = event.target.value;
 
-    this.newServer = (<HTMLInputElement>event.target).value
+    // this.newServer = (<HTMLInputElement>event.target).value
   }
 
 
