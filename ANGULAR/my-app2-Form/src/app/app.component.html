@@ -1,0 +1,86 @@
+<!--  Approccio TEMPLATE DRIVEN -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <form (ngSubmit)="onSubmit(mioForm)" #mioForm='ngForm'>
+
+      <div id="datiUser" ngModelGroup="datiUser" #datiUser = "ngModelGroup">
+          <div class="mb-3">
+            <label for="username">Username</label>
+            <input type="text" id="username" class="form-control"
+            ngModel
+            name="username"
+            required
+            username
+            #username = 'ngModel'>
+          </div>
+
+        <!-- <p class="alert alert-danger" *ngIf="!username.valid && username.value === '' ">Valore inserito non valido</p> -->
+
+
+          <div class="mb-3">
+            <label for="email">Email</label>
+            <input type="text" id="email" class="form-control"
+            ngModel
+            name="email"
+            required
+            email
+            #email = "ngModel">
+          </div>
+
+        <!-- Valido solo per la mail -->
+        <p class="alert alert-danger" *ngIf="!email.valid && email.touched">Mail inserita non valida</p>
+
+        <!-- Valido per mail e username insieme -->
+          <p class="alert alert-danger" *ngIf="!datiUser.valid && datiUser.touched"> Hai inserito dei valori non validi</p>
+
+      </div>
+
+
+
+
+        <div class="mb-3">
+          <label for="secret">Domanda Segreta</label>
+
+          <select id="secret" class="form-control"
+          [(ngModel)] = "domandaDefault"
+          name="secret">
+
+            <option value="animale">Il nome del tuo animale domestico</option>
+            <option value="amico">Il nome del tuo migliore amico/a</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <textarea class="form-control" name="risposta" rows="3"
+          [(ngModel)] = 'risposta'
+          required></textarea>
+        </div>
+
+        <p>La tua risposta è : {{risposta}}</p>
+
+        <button type="submit" class="btn btn-primary"
+        [disabled]="!mioForm.valid">
+          Submit
+        </button>
+
+      </form>
+
+
+    </div>
+  </div>
+</div>
+
+
+<hr>
+<div class="container">
+  <h2>Service con Utenze</h2>
+  <app-utente></app-utente>
+</div>
+
+
+<div class="container">
+  <app-api-est></app-api-est>
+</div>

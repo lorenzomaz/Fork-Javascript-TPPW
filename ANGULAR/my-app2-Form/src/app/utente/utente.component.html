@@ -1,0 +1,55 @@
+<p>utente works!</p>
+
+<button class="btn btn-primary" (click)="onClickBtn()" >Cliccami</button>
+
+<p>Crea un form che permetta l'inserimento di nuovi utenti,
+  il form va controllato seguendo il principio del template Driven</p>
+
+<h2>
+  Compila il form per inserire un utente
+</h2>
+
+<div class="row">
+  <div class="col-xs-12">
+
+    <form #formUtente = 'ngForm'>
+      <div class="mb-3">
+        <label for="Nome">Nome</label>
+        <input type="text" class="form-control"
+        ngModel
+        name="nome"
+        #accountName>
+      </div>
+
+      <div class="mb-3">
+        <label for="tipo">Tipo</label>
+        <input type="text" class="form-control"
+        ngModel
+        name="tipo"
+        #accountTipo>
+      </div>
+
+      <!-- <button class="btn btn-primary"
+      (click)="onCreateAccount(accountName.value, accountTipo.value)">Aggiungi</button> -->
+
+      <!-- OPPURE -->
+      <button class="btn btn-primary"
+      (click)="onCreateAccount(formUtente)">Aggiungi</button>
+
+    </form>
+  </div>
+</div>
+
+
+<!--
+<h2>Lista Utenti</h2>
+
+<ul *ngFor="let utente of utenze">
+  <li>{{utente.nome}} - {{utente.tipo}}</li>
+</ul> -->
+
+
+<!-- <app-lista-utenti *ngFor="let utente of utenze"
+[user] = utente></app-lista-utenti> -->
+
+<app-lista-utenti></app-lista-utenti>
