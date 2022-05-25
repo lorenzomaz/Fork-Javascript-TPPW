@@ -9,6 +9,9 @@ import { ContattiComponent } from './contatti/contatti.component';
 import { AboutComponent } from './about/about.component';
 import { IscrizioneComponent } from './iscrizione/iscrizione.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ContattoComponent } from './contatti/contatto/contatto.component';
+import { AnimaliComponent } from './animali/animali.component';
+import { AnimaleComponent } from './animali/animale/animale.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ContattiComponent,
     AboutComponent,
     IscrizioneComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ContattoComponent,
+    AnimaliComponent,
+    AnimaleComponent
   ],
   imports: [
     BrowserModule,

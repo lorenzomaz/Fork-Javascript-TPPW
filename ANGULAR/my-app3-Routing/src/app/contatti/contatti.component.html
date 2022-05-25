@@ -1,1 +1,29 @@
-<p>contatti works!</p>
+<div class="row">
+
+<h2>Contatti </h2>
+<p>Clicca sul contatto per vedere la specifica</p>
+
+<!-- <ul *ngFor="let cont of contatti">
+  <li>{{cont.nome}}</li>
+</ul> -->
+
+<div class="col-4">
+  <div class="list-group">
+    <a href="#" class="list-group-item"
+    [routerLink]="['/contatti', cont.id, cont.nome]"
+    *ngFor="let cont of contatti">
+    {{cont.nome}}
+  </a>
+  </div>
+</div>
+
+<div class="col-8">
+  <!-- <app-contatto></app-contatto> -->
+
+  <router-outlet></router-outlet>
+
+</div>
+
+
+
+</div>
