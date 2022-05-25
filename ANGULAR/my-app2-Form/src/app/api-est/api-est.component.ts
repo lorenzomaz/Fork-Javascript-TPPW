@@ -9,16 +9,16 @@ import { ApiEsternaService } from '../api-esterna.service';
 export class ApiEstComponent implements OnInit {
 
   dati: any;
+
   constructor(private apiService: ApiEsternaService) {
 
     //sto ricevendo degli Observable, cioè dei dati cui sono obbligato a fare il subscribe
     this.apiService.getData()
     .subscribe(data => {
-          console.log(data);
-          this.dati = data;
-          console.log(this.dati.data);
 
-        })
+          this.dati = data;
+
+        });
    }
 
   ngOnInit(): void {
