@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Animale } from '../animale.model';
 import { AnimaliService } from '../animali.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { AnimaliService } from '../animali.service';
 })
 export class AnimaleComponent implements OnInit {
 
-  animale: {id: number, nome: string, tipo: string, nomeAka: string, link?: string}
+  animale: Animale;
 
   constructor(private route: ActivatedRoute, private animaliService: AnimaliService) { }
 

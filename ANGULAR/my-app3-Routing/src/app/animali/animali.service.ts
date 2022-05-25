@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Animale } from './animale.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnimaliService {
 
-  private animali = [
+  private animali: Animale[] = [
     {
       id: 1,
       nome: "Puma",
