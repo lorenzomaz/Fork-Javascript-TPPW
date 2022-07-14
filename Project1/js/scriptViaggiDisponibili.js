@@ -1,14 +1,14 @@
 $(function(){
 
     $.ajax({
-        url: 'http://localhost:3000/viaggi',
+        url: 'http://localhost:3000/prodotti',
         type: "GET",
         dataType: 'json',
         success: function(response){
             console.log(response);
             for(var i = 0; i < response.length; i++){
                 costruisciCard(response[i].id, response[i].nome, response[i].immagine, response[i].descrizione, response[i].acquistato, response[i].prezzo);
-                viaggi.push(response[i]);
+                prodotti.push(response[i]);
             }
         },
         complete: function(){
@@ -17,7 +17,7 @@ $(function(){
             
                 if($(this).attr('data-acq') == "true"){
                     console.log('Già acquistato');
-                    $(this).find('.card-body').append('<p class="text-start">Viaggio già inserito nel carrello</p>')
+                    $(this).find('.card-body').append('<p class="text-start">Prodotto già inserito nel carrello</p>')
                     $(this).find('.btn').addClass('disabled');
                 }
             })
@@ -27,8 +27,8 @@ $(function(){
     });
 
     
-    let viaggi = [];
-    console.log(viaggi);
+    let prodotti = [];
+    console.log(prodotti);
 
     function costruisciCard(id, nome, immagine, descrizione, acquistato, prezzo){
         let card = `<div class="col mb-3"><div class="card" data-id="${id}" data-acq="${acquistato}" >`+
@@ -57,7 +57,7 @@ $(function(){
 
 function acquista(id, nome, immagine, descrizione, prezzo){
     $.ajax({
-        url: 'http://localhost:3000/viaggi/'+id,
+        url: 'http://localhost:3000/prodotti/'+id,
         type: 'PUT',
         dataType: 'json',
         data: {
