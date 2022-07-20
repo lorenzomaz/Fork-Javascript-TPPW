@@ -1,0 +1,77 @@
+{
+  "prodotti": [
+    {
+      "nome": "Hawaii",
+      "immagine": "https://source.unsplash.com/800x800/?Hawaii",
+      "descrizione": "Fantastico viaggio nelle isole del Pacifico",
+      "acquistato": "false",
+      "prezzo": "2500",
+      "id": 1
+    },
+    {
+      "nome": "Petra",
+      "immagine": "https://source.unsplash.com/800x800/?Petra",
+      "descrizione": "Viaggio nella città più famosa della Giordania",
+      "acquistato": "false",
+      "prezzo": "1800",
+      "id": 2
+    },
+    {
+      "nome": "Mont Saint Michel",
+      "immagine": "https://source.unsplash.com/800x800/?Mont+Saint+Michel",
+      "descrizione": "Attenti alla marea",
+      "acquistato": "false",
+      "prezzo": "800",
+      "id": 3
+    },
+    {
+      "nome": "San Francisco",
+      "immagine": "https://source.unsplash.com/800x800/?San+Francisco",
+      "descrizione": "California",
+      "acquistato": "false",
+      "prezzo": "2600",
+      "id": 4
+    },
+    {
+      "nome": "Roma",
+      "immagine": "https://source.unsplash.com/800x800/?Rome",
+      "descrizione": "La città Eterna",
+      "acquistato": "false",
+      "prezzo": "1500",
+      "id": 5
+    },
+    {
+      "nome": "Miami",
+      "immagine": "https://source.unsplash.com/800x800/?Miami",
+      "descrizione": "Welcome to Miami",
+      "acquistato": "false",
+      "prezzo": "3000",
+      "id": 6
+    },
+    {
+      "nome": "Berlino",
+      "immagine": "https://source.unsplash.com/800x800/?Berlin",
+      "descrizione": "La capitale d'Europa",
+      "acquistato": "false",
+      "prezzo": "1000",
+      "id": 7
+    },
+    {
+      "nome": "Capri",
+      "immagine": "https://source.unsplash.com/800x800/?Capri",
+      "descrizione": "Viaggio nell'isola Blu",
+      "acquistato": "false",
+      "prezzo": "3500",
+      "id": 8
+    }
+  ],
+  "eventi": [
+    {
+      "id": 1,
+      "nome": "Concerto Jazz",
+      "data": "15 Luglio 22",
+      "descrizione": "Lorem Ipsum",
+      "scaduto": false
+    }
+  ]
+}

@@ -19,7 +19,7 @@
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/style.css">
-  <title>Progetto Viaggi</title>
+  <title>Progetto </title>
 </head>
 
 <body>
@@ -60,25 +60,58 @@
   </header>
   <!-- FINE HEADER -->
   <main>
+    <div class="container">
 
-    <h2>Stai acquistando...</h2>
+      <div class="row">
 
-    <div id="listaTotale">
-    
-        <ul id="listaCarrello"></ul>
-
-        <div id="riepilogo"></div>
-
-        <button class="btn btn-primary" id="btnAcq">
-         Acquista
-        </button>
+        <h2>Stai acquistando...</h2>
         
+      <div class="col-6">
+        
+        <div id="listaTotale">
+          
+          <ul id="listaCarrello"></ul>
+          
+          <div id="riepilogo"></div>
+        </div>
+      </div>
+
+      <div class="col-6" id="pagamento">
+        
+        <form action="">
+          <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" name="Nome" id="nome" aria-describedby="helpId" placeholder="">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="">
+        </div>
+        <div class="mb-3">
+          <label for="indirizzo" class="form-label">Indirizzo</label>
+          <input type="text" name="indirizzo" id="indirizzo" class="form-control" placeholder="" aria-describedby="helpId">
+        </div>
+        <div class="mb-3">
+          <label for="pay" class="form-label">Metodi Pagamento</label>
+          <select class="form-select" name="pay" id="pay">
+            <option selected>Seleziona</option>
+            <option value="">Pay Pal</option>
+            <option value="">Carta di Credito</option>
+            <option value="">Bonifico</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" id="btnAcq">
+          Acquista
+        </button>
+      </form>
     </div>
 
+    </div>
+  </div>
   </main>
 
-
-
+  
+  
   <!-- FOOTER -->
   <footer class="footer mt-auto py-3 bg-light">
     <div class="container">

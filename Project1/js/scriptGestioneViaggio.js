@@ -11,7 +11,7 @@ $('#btnAgg').on('click', function(){
 
 function aggiungiViaggio(nome, descrizione, immagine, prezzo){
    $.ajax({
-       url: 'http://localhost:3000/viaggi',
+       url: 'http://localhost:3000/prodotti',
        type: 'POST',
        dataType: 'json',
        data:{

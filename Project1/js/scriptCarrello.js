@@ -1,34 +1,35 @@
 $(function(){
 
     var totalePrezzo = 0;
-    var viaggiAll = '';
+    var prodottiAll = '';
 
     $.ajax({
-        url: 'http://localhost:3000/viaggi',
+        url: 'http://localhost:3000/prodotti',
         type: "GET",
         dataType: 'json',
-        success: function(viaggi){
+        success: function(prodotti){
             
-            viaggiAll = viaggi;
+            prodottiAll = prodotti;
 
-           //creo un filtro a mano, selezionando solo i viaggi acquistati
-           for(var i = 0; i < viaggi.length; i++){
-               if(viaggi[i].acquistato == 'true'){
-                stampaLista(viaggi[i].nome, viaggi[i].prezzo);
-                totalePrezzo += Number(viaggi[i].prezzo);
-                console.log(viaggi[i]);
+           //creo un filtro a mano, selezionando solo i prodotti acquistati
+           for(var i = 0; i < prodotti.length; i++){
+               if(prodotti[i].acquistato == 'true'){
+                stampaLista(prodotti[i].nome, prodotti[i].prezzo);
+                totalePrezzo += Number(prodotti[i].prezzo);
+                console.log(prodotti[i]);
                }
            }
 
            if(totalePrezzo == 0){
                $('#btnAcq').hide();
+               $('#pagamento').hide();
            }
             
         },
         complete: function(){
             console.log(totalePrezzo);       
             $('#riepilogo').append('<h2> Totale: ' + totalePrezzo + ' € </h2>') 
-            console.log(viaggiAll);    
+            console.log(prodottiAll);    
         }
 
     });
@@ -37,22 +38,30 @@ $(function(){
         $('#listaCarrello').append('<li>' + nome + ' - ' + prezzo + ' € </li>');
     }
 
-    $(document).on('click', '#btnAcq', function(){
-        restoreViaggi(viaggiAll)
+    $(document).on('click', '#btnAcq', function(event){
+     
+        if($('#nome').val() == ''){
+            alert('non hai compilato il nome');
+       }else if($('#email').val() == ''){
+            alert('non hai compilato il campo mail ');
+       }
+        else{
+            restoreViaggi(prodottiAll)
+        }
     });
 
-    function restoreViaggi(viaggi){
-        for(var i = 0; i < viaggi.length; i++){
+    function restoreViaggi(prodotti){
+        for(var i = 0; i < prodotti.length; i++){
         $.ajax({
-            url:'http://localhost:3000/viaggi/' + viaggi[i].id,
+            url:'http://localhost:3000/prodotti/' + prodotti[i].id,
             type: 'PUT',
             dataType:'json',
             data: {
-                nome: viaggi[i].nome,
-                immagine: viaggi[i].immagine,
-                descrizione: viaggi[i].descrizione,
+                nome: prodotti[i].nome,
+                immagine: prodotti[i].immagine,
+                descrizione: prodotti[i].descrizione,
                 acquistato: false,
-                prezzo: viaggi[i].prezzo
+                prezzo: prodotti[i].prezzo
             },
             complete: function(){
                 window.location.href = "./thanks.html"

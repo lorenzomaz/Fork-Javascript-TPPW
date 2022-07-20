@@ -1,0 +1,12 @@
+<h6>Stai Visualizzando il seguente animale</h6>
+
+<p> Id: {{animale.id}} </p>
+<p> {{animale.nome}} </p>
+<p> Tipo: {{animale.tipo}} </p>
+<p> Nome: {{animale.nomeAka}} </p>
+<p *ngIf="animale.link">
+  Link Youtube:
+  <a href="{{animale.link}}" target="_blank">
+    Povero Gabbiano
+  </a>
+</p>
